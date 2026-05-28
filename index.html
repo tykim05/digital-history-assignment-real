@@ -3,11 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Language of Exclusion | DH Project</title>
+<title>Art Under Orders | DH Project</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet">
 <style>
-/* ── ORIGINAL THEME VARIABLES ── */
 :root {
   --ink:       #1a1410;
   --ink2:      #3d332a;
@@ -35,10 +34,7 @@ body {
 }
 
 /* ── MASTHEAD ── */
-.masthead {
-  border-bottom: 3px double var(--rule-h); padding: 0;
-  background: var(--paper); position: sticky; top: 0; z-index: 100;
-}
+.masthead { border-bottom: 3px double var(--rule-h); background: var(--paper); position: sticky; top: 0; z-index: 100; }
 .masthead-top { display: flex; align-items: center; justify-content: space-between; padding: 10px 48px; border-bottom: 1px solid var(--rule); }
 .course-tag { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink3); }
 .nav-links { display: flex; gap: 28px; }
@@ -64,17 +60,21 @@ body {
   .page-body { grid-template-columns: 1fr; }
   .main-col { border-right: none; padding: 40px 24px 60px; }
   .side-col { padding: 0 24px 60px; border-top: 1px solid var(--rule); }
+  .masthead-top { padding: 10px 24px; }
+  .hero { padding: 48px 24px 40px; }
+  .quiz-wrapper { padding: 0 24px 40px; }
 }
 
-/* ── TYPOGRAPHY & SECTIONS ── */
+/* ── TYPOGRAPHY ── */
 .sec-num { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink3); margin-bottom: 8px; }
 .sec-title { font-family: 'Playfair Display', serif; font-size: 1.65rem; font-weight: 700; color: var(--ink); margin-bottom: 22px; padding-bottom: 14px; border-bottom: 2px solid var(--ink); }
 .sec-title.gold { border-color: var(--gold); }
 .sec-title.red  { border-color: var(--red); }
 section { margin-bottom: 64px; }
 p { margin-bottom: 18px; }
+p:last-child { margin-bottom: 0; }
 
-/* ── QUIZ STYLES ── */
+/* ── QUIZ ── */
 .quiz-wrapper { max-width: 960px; margin: 0 auto; padding: 0 48px 40px; border-bottom: 1px solid var(--rule); }
 .quiz-intro { font-style: italic; color: var(--ink2); margin-bottom: 30px; font-size: 1.1rem; }
 .quiz-stage-box { background: var(--paper2); border: 1px solid var(--rule-h); border-radius: 2px; padding: 32px; margin-bottom: 40px; animation: fadeInStage 0.6s ease-out forwards; }
@@ -92,7 +92,7 @@ p { margin-bottom: 18px; }
 
 /* ── GATED CONTENT ── */
 #gated-content { display: none; opacity: 0; transition: opacity 1.2s ease-in-out; }
-.verdict-box { background: var(--ink); color: var(--paper); padding: 48px; margin-bottom: 0px; text-align: center; }
+.verdict-box { background: var(--ink); color: var(--paper); padding: 48px; text-align: center; }
 .verdict-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 16px; font-weight: 700; }
 .verdict-desc { font-size: 1.15rem; line-height: 1.6; color: var(--paper2); max-width: 800px; margin: 0 auto; }
 
@@ -100,22 +100,22 @@ p { margin-bottom: 18px; }
 .compact-gallery-system { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 24px; margin-top: 24px; }
 .compact-card { background: var(--paper2); border: 1px solid var(--rule-h); border-radius: 2px; overflow: hidden; }
 .compact-card-header { padding: 10px 16px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink2); border-bottom: 1px solid var(--rule-h); }
-.compact-images-row { display: flex; gap: 0; }
+.compact-images-row { display: flex; }
 .compact-img-cell { flex: 1; background: #fff; padding: 12px; display: flex; flex-direction: column; align-items: center; gap: 8px; border-bottom: 1px solid var(--rule-h); }
 .compact-img-cell + .compact-img-cell { border-left: 1px solid var(--rule-h); }
 .compact-img-cell img { width: 100%; height: 140px; object-fit: contain; }
 .compact-img-label { font-size: 13px; color: var(--ink2); text-align: center; line-height: 1.3; }
-.compact-img-label strong { display:block; color:var(--ink); font-family:'Playfair Display', serif; font-size:15px; margin: 4px 0 2px; }
+.compact-img-label strong { display: block; color: var(--ink); font-family: 'Playfair Display', serif; font-size: 15px; margin: 4px 0 2px; }
 .label-badge { display: inline-block; font-size: 9px; font-family: 'IBM Plex Mono', monospace; padding: 3px 6px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.08em; }
-.badge-canonical { background: rgba(26,90,74,0.1); color: var(--teal); border: 1px solid rgba(26,90,74,0.2); }
-.badge-degenerate { background: rgba(139,26,26,0.1); color: var(--red); border: 1px solid rgba(139,26,26,0.2); }
+.badge-canonical  { background: rgba(26,90,74,0.1);  color: var(--teal); border: 1px solid rgba(26,90,74,0.2); }
+.badge-degenerate { background: rgba(139,26,26,0.1); color: var(--red);  border: 1px solid rgba(139,26,26,0.2); }
 .detail-scroll-btn { display: block; width: 100%; padding: 12px 16px; background: transparent; border: none; color: var(--ink3); font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: all 0.25s; text-align: center; }
 .detail-scroll-btn:hover { background: rgba(184,134,11,0.08); color: var(--gold); }
 .detail-scroll-btn::after { content: " ↓"; }
 
-/* ── APPENDIX DETAIL GALLERY ── */
+/* ── APPENDIX ── */
 .detail-gallery-system { display: flex; flex-direction: column; gap: 35px; margin-top: 20px; }
-.gallery-card { background: var(--paper2); border: 1px solid var(--rule-h); border-radius: 2px; scroll-margin-top: 80px; transition: box-shadow 0.3s ease; }
+.gallery-card { background: var(--paper2); border: 1px solid var(--rule-h); border-radius: 2px; scroll-margin-top: 80px; transition: box-shadow 0.3s; }
 .card-header-accent { padding: 14px 20px; font-family: 'IBM Plex Mono', monospace; font-weight: 500; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid var(--rule-h); color: var(--ink); }
 .card-body-split { display: flex; flex-wrap: wrap; gap: 25px; padding: 25px; }
 .exposition-visual-column { flex: 1; min-width: 240px; display: flex; flex-direction: column; gap: 12px; }
@@ -125,9 +125,7 @@ p { margin-bottom: 18px; }
 .sub-block-title { font-size: 15px; font-family: 'Playfair Display', serif; font-weight: 700; margin-bottom: 8px; }
 .sub-block-title.can-title { color: var(--teal); border-left: 3px solid var(--teal); padding-left: 10px; }
 .sub-block-title.deg-title { color: var(--red); border-left: 3px solid var(--red); padding-left: 10px; margin-top: 24px; }
-.narrative-text { font-size: 15px; color: var(--ink2); margin-bottom: 0; line-height: 1.6; }
-
-/* Highlight Flash Animation */
+.narrative-text { font-size: 15px; color: var(--ink2); line-height: 1.6; margin-bottom: 0; }
 .detail-highlight { animation: highlightPulse 1.5s ease-out; }
 @keyframes highlightPulse {
   0%   { box-shadow: 0 0 0 0 rgba(184,134,11,0.5); border-color: var(--gold); }
@@ -135,16 +133,15 @@ p { margin-bottom: 18px; }
   100% { box-shadow: none; border-color: var(--rule-h); }
 }
 
-/* ── ORIGINAL COMPONENTS RESTORED ── */
+/* ── COMMON COMPONENTS ── */
 .abstract { background: var(--paper2); border-left: 3px solid var(--gold); padding: 24px 28px; margin-bottom: 36px; font-style: italic; color: var(--ink2); }
 .argument-box { border: 1.5px solid var(--ink); padding: 22px 26px; margin: 32px 0; position: relative; }
 .argument-box .label { position: absolute; top: -10px; left: 16px; background: var(--paper); padding: 0 8px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink2); }
 .argument-box p { font-size: 1.05rem; line-height: 1.7; color: var(--ink); margin: 0; }
 .argument-box strong { color: var(--red); }
 
-/* Timeline Restored */
 .timeline { margin: 32px 0; }
-.tl-item { display: grid; grid-template-columns: 64px 1px 1fr; gap: 0 20px; margin-bottom: 0; min-height: 64px; }
+.tl-item { display: grid; grid-template-columns: 64px 1px 1fr; gap: 0 20px; min-height: 64px; }
 .tl-year { font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 500; color: var(--gold); text-align: right; padding-top: 4px; }
 .tl-line { display: flex; flex-direction: column; align-items: center; }
 .tl-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 6px; border: 1.5px solid var(--paper); box-shadow: 0 0 0 1.5px var(--gold); }
@@ -152,58 +149,62 @@ p { margin-bottom: 18px; }
 .tl-vline { flex: 1; width: 1px; background: var(--rule-h); margin-top: 2px; }
 .tl-item:last-child .tl-vline { display: none; }
 .tl-body { padding: 2px 0 20px; }
-.tl-event { font-size: 14px; font-weight: 400; color: var(--ink); line-height: 1.5; }
+.tl-event { font-size: 14px; color: var(--ink); line-height: 1.5; }
 .tl-note { font-size: 12px; color: var(--ink3); font-style: italic; margin-top: 3px; }
 
-/* Charts & Probe Restored */
 .chart-block { background: var(--paper2); border: 1px solid var(--rule-h); border-radius: 2px; padding: 28px; margin: 28px 0; }
 .chart-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink3); margin-bottom: 8px; }
 .chart-title { font-size: 1rem; font-weight: 400; color: var(--ink); margin-bottom: 18px; line-height: 1.4; }
-.chart-note { font-size: 12px; color: var(--ink3); font-style: italic; margin-top: 14px; line-height: 1.5; }
-.year-selector { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
-.yr-btn { font-family: 'IBM Plex Mono', monospace; font-size: 12px; padding: 5px 14px; border: 1px solid var(--rule-h); background: transparent; cursor: pointer; color: var(--ink2); transition: all 0.15s; }
-.yr-btn:hover { border-color: var(--gold); color: var(--gold); }
-.yr-btn.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
-
-.probe-container { background: var(--paper2); border: 1px solid var(--rule-h); padding: 24px 28px; margin: 28px 0; }
-.probe-title { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink3); margin-bottom: 14px; }
-.probe-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
-.probe-btn { font-family: 'IBM Plex Mono', monospace; font-size: 12px; padding: 5px 13px; border: 1px solid var(--rule-h); background: transparent; cursor: pointer; color: var(--ink2); transition: all 0.15s; }
-.probe-btn.active { background: var(--red); color: var(--paper); border-color: var(--red); }
-.probe-btn:hover:not(.active) { border-color: var(--red); color: var(--red); }
-#probeResult { min-height: 60px; font-size: 14px; color: var(--ink2); line-height: 1.6; font-style: italic; }
-
-/* Findings & Methodology Restored */
-.finding-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
-@media(max-width:640px){ .finding-grid { grid-template-columns: 1fr; } }
-.finding-card { padding: 18px 20px; border: 1px solid var(--rule-h); background: var(--paper); }
-.finding-card .fc-num { font-family: 'IBM Plex Mono', monospace; font-size: 28px; font-weight: 500; color: var(--gold); line-height: 1; margin-bottom: 4px; }
-.finding-card .fc-num.red { color: var(--red); }
-.finding-card .fc-label { font-size: 12px; color: var(--ink3); line-height: 1.5; }
-
-.method-steps { counter-reset: step; }
-.method-step { display: flex; gap: 18px; margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px solid var(--rule); }
-.method-step:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-.step-num { font-family: 'IBM Plex Mono', monospace; font-size: 22px; font-weight: 500; color: var(--paper3); line-height: 1; flex-shrink: 0; width: 36px; counter-increment: step; }
-.step-body strong { display: block; font-size: 14px; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; color: var(--ink); font-family: 'IBM Plex Mono', monospace; font-weight: 500; }
-.step-body p { font-size: 14px; color: var(--ink2); margin: 0; line-height: 1.6; }
-
-.kw-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 16px 0; }
-.kw-table th { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink3); text-align: left; padding: 6px 10px; border-bottom: 1.5px solid var(--ink); }
-.kw-table td { padding: 7px 10px; border-bottom: 1px solid var(--rule); color: var(--ink2); vertical-align: top; }
-.kw-table tr:last-child td { border-bottom: none; }
-.kw-table .cluster-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 6px; vertical-align: middle; }
-
-/* 3D Model & Misc */
-.iframe-box { border: 1px solid var(--rule-h); padding: 10px; background: #fff; margin-bottom: 24px; }
-.iframe-box iframe { width: 100%; height: 480px; border: none; }
+.chart-note { font-size: 12px; color: var(--ink3); font-style: italic; margin-top: 14px; line-height: 1.5; padding-top: 12px; border-top: 1px solid var(--rule); }
 
 .annotation { display: flex; gap: 12px; align-items: flex-start; padding: 14px 18px; border-left: 2.5px solid var(--red); background: rgba(139,26,26,0.04); margin: 16px 0; font-size: 13.5px; color: var(--ink2); line-height: 1.6; }
 .annotation.gold { border-color: var(--gold); background: rgba(184,134,11,0.05); }
 .anno-icon { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--ink3); flex-shrink: 0; padding-top: 3px; text-transform: uppercase; letter-spacing: 0.08em; }
+
+.yr-toggle { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.yt-btn { font-family: 'IBM Plex Mono', monospace; font-size: 12px; padding: 5px 14px; border: 1px solid var(--rule-h); background: transparent; cursor: pointer; color: var(--ink2); transition: all 0.15s; }
+.yt-btn:hover { border-color: var(--gold); color: var(--gold); }
+.yt-btn.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+/* ── STAT CARDS ── */
+.finding-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+@media(max-width:640px){ .finding-grid { grid-template-columns: 1fr; } }
+.finding-card { padding: 18px 20px; border: 1px solid var(--rule-h); background: var(--paper); border-top: 3px solid var(--gold); }
+.finding-card.red { border-top-color: var(--red); }
+.fc-num { font-family: 'IBM Plex Mono', monospace; font-size: 2.2rem; font-weight: 500; color: var(--gold); line-height: 1; margin-bottom: 6px; }
+.fc-num.red { color: var(--red); }
+.fc-label { font-size: 13px; color: var(--ink3); line-height: 1.5; }
+
+/* ── METHODOLOGY ── */
+.method-steps { counter-reset: step; }
+.method-step { display: flex; gap: 18px; margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px solid var(--rule); }
+.method-step:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.step-num { font-family: 'IBM Plex Mono', monospace; font-size: 22px; font-weight: 500; color: var(--paper3); line-height: 1; flex-shrink: 0; width: 36px; }
+.step-body strong { display: block; font-size: 14px; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; color: var(--ink); font-family: 'IBM Plex Mono', monospace; font-weight: 500; }
+.step-body p { font-size: 14px; color: var(--ink2); margin: 0; line-height: 1.6; }
+
+/* ── HEATMAP ── */
+.heatmap-wrap { overflow-x: auto; margin: 20px 0; }
+.heatmap-grid { display: grid; gap: 3px; min-width: 580px; }
+.hm-year-label { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--gold); display: flex; align-items: center; padding: 0 8px; }
+.hm-header { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink3); text-align: center; padding: 6px 2px; border-bottom: 1px solid var(--rule-h); overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.hm-cell { height: 34px; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; cursor: default; transition: transform 0.12s; }
+.hm-cell:hover { transform: scale(1.08); position: relative; z-index: 2; }
+
+/* ── PULL QUOTE ── */
 .conclusion-pull { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic; color: var(--ink); line-height: 1.55; padding: 28px 32px; border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); margin: 32px 0; }
 
-/* Sidebar */
+/* ── 3D MODEL ── */
+.iframe-box { border: 1px solid var(--rule-h); padding: 10px; background: #fff; margin-bottom: 24px; }
+.iframe-box iframe { width: 100%; height: 480px; border: none; }
+
+/* ── DATA TABLE ── */
+.data-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 16px 0; }
+.data-table th { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink3); text-align: left; padding: 6px 10px; border-bottom: 1.5px solid var(--ink); }
+.data-table td { padding: 7px 10px; border-bottom: 1px solid var(--rule); color: var(--ink2); vertical-align: top; }
+.data-table tr:last-child td { border-bottom: none; }
+
+/* ── SIDEBAR ── */
 .side-section { margin-bottom: 40px; }
 .side-sec-title { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink3); margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid var(--rule); }
 .source-card { padding: 14px 0; border-bottom: 1px solid var(--rule); }
@@ -212,15 +213,14 @@ p { margin-bottom: 18px; }
 .sc-meta { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--gold); letter-spacing: 0.06em; }
 .sc-note { font-size: 12px; color: var(--ink3); margin-top: 4px; font-style: italic; }
 .sc-tag { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 9px; padding: 2px 7px; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 6px; border: 1px solid var(--rule-h); color: var(--ink3); }
-.legend-grid { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
-.legend-item { display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--ink2); }
-.legend-swatch { width: 14px; height: 14px; border-radius: 2px; flex-shrink: 0; }
 
+/* ── FOOTER ── */
 footer { border-top: 3px double var(--rule-h); padding: 32px 48px; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px; }
 .footer-text { font-size: 12px; color: var(--ink3); line-height: 1.7; }
 .footer-text a { color: var(--gold); text-decoration: none; }
 .footer-logo { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--ink2); font-style: italic; text-align: right; }
 
+/* ── ANIMATIONS ── */
 .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .fade-in.visible { opacity: 1; transform: none; }
 @keyframes fadeInStage { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: none; } }
@@ -228,13 +228,16 @@ footer { border-top: 3px double var(--rule-h); padding: 32px 48px; display: flex
 </head>
 <body>
 
+<!-- ═══════════════════ MASTHEAD ═══════════════════ -->
 <header class="masthead">
   <div class="masthead-top">
     <div class="course-tag">KAIST · HSS283/DHS283 · Digital Humanities · Spring 2026</div>
     <nav class="nav-links" id="main-nav" style="display:none;">
       <a href="#visual-evidence">Visual</a>
       <a href="#argument">Argument</a>
-      <a href="#analysis">Analysis</a>
+      <a href="#context">Context</a>
+      <a href="#analysis">Text Mining</a>
+      <a href="#findings">Findings</a>
       <a href="#method">Method</a>
       <a href="#spatial">Spatial</a>
       <a href="#appendix-anchor">Appendix</a>
@@ -242,17 +245,26 @@ footer { border-top: 3px double var(--rule-h); padding: 32px 48px; display: flex
   </div>
 </header>
 
+<!-- ═══════════════════ HERO ═══════════════════ -->
 <div class="hero">
-  <div class="hero-kicker">Digital History Project — Text Mining & Curatorial Analysis</div>
-  <h1>The Language of <em>Exclusion:</em><br>How Nazi Rhetoric Weaponized Art</h1>
-  <p class="hero-sub">Before reading the analysis, test your aesthetic affinity.</p>
+  <div class="hero-kicker">Digital History Project — Database Analysis &amp; Curatorial Study</div>
+  <h1>Art Under <em>Orders:</em><br>How the Exhibition Became a Weapon</h1>
+  <p class="hero-sub">A text-mining analysis of Hitler, Goebbels, and Speer — tracing the linguistic division of labor that made aesthetic exclusion possible, 1933–1946.</p>
+  <div class="hero-meta">
+    <div class="meta-item"><strong>Investigator</strong>tykim05, KAIST Undergraduate</div>
+    <div class="meta-item"><strong>Primary Sources</strong>German Propaganda Archive (Calvin Univ.) · Domarus (1990) · Speer (1970)</div>
+    <div class="meta-item"><strong>Corpus</strong>18 texts · 3 speakers · 1933–1946</div>
+    <div class="meta-item"><strong>Method</strong>Semantic cluster analysis · Longitudinal frequency tracking · Speaker comparison</div>
+  </div>
 </div>
 
+<!-- ═══════════════════ QUIZ ═══════════════════ -->
 <div class="quiz-wrapper">
-  <p class="quiz-intro">Below are 4 pairs of artworks. Without knowing their history or creators, select the style that naturally appeals to you in each pair. Your choices will unlock the deeper archive.</p>
+  <p class="quiz-intro">The four pairs below are drawn from artworks displayed at — or banned from — the Great German Art Exhibition. Without knowing their history, select the style that naturally appeals to you. Your choices unlock the analysis.</p>
   <div id="quiz-container"></div>
 </div>
 
+<!-- ═══════════════════ GATED CONTENT ═══════════════════ -->
 <div id="gated-content">
 
   <div class="verdict-box" id="verdict-anchor">
@@ -263,196 +275,402 @@ footer { border-top: 3px double var(--rule-h); padding: 32px 48px; display: flex
   <div class="page-body">
     <main class="main-col">
 
+      <!-- SECTION I: VISUAL EVIDENCE -->
       <section id="visual-evidence" class="fade-in">
         <div class="sec-num">Section I</div>
         <h2 class="sec-title gold">Visual Evidence: The Curated Divide</h2>
         <div class="abstract">
-          The works you just evaluated were historically divided into two absolute categories by the Nazi regime. Below is a summary of the specimens. To read the detailed curatorial history of each piece, jump to the Appendix at the bottom of this page.
+          The works you evaluated were separated by the Nazi regime into two absolute categories: state-sanctioned art displayed in the Great German Art Exhibition, and banned "Degenerate Art" (Entartete Kunst) confiscated from public museums. Below is a summary. For the full historical analysis of each pair, scroll to the Appendix.
         </div>
-        
-        <div class="compact-gallery-system" id="compact-gallery">
-          </div>
+        <div class="compact-gallery-system" id="compact-gallery"></div>
       </section>
 
+      <!-- SECTION II: ARGUMENT -->
       <section id="argument" class="fade-in">
         <div class="sec-num">Section II</div>
         <h2 class="sec-title gold">Central Argument</h2>
-        <p>When Hitler took power in 1933, he inherited a Germany of extraordinary artistic diversity. The Weimar Republic had produced the Bauhaus, German Expressionism, Dada, and New Objectivity — movements that had shaped international modernism. Within four years, all of it had been systematically destroyed: confiscated, banned, or driven into exile.</p>
-        <p>How did this happen so quickly, and with so little public resistance? The answer lies partly in how the regime <em>prepared</em> the exclusion linguistically before executing it administratively. Nazi cultural speeches did not simply announce censorship — they constructed a conceptual world in which certain art was made to feel dangerous, foreign, and diseased before a single painting was touched.</p>
+        <p>Every summer from 1937 to 1944, the Nazi regime staged the <em>Große Deutsche Kunstausstellung</em> — the Great German Art Exhibition — in Munich's newly built House of German Art. Hundreds of thousands of visitors. A meticulously curated vision of what "true" German art looked like. On the surface, it was an art exhibition. In practice, it was a political instrument.</p>
+        <p>The works you just evaluated are not a curiosity of history. They represent a system. The regime did not simply have taste preferences — it <em>engineered</em> those preferences into its population through eight consecutive years of annual exhibitions. The question this project asks is: what does the data tell us about how that engineering changed over time?</p>
         <div class="argument-box">
-          <span class="label">Core Claim</span>
-          <p>The intensification of <strong>exclusion language</strong> ("degenerate / foreign / chaos") in Nazi cultural discourse between 1933 and 1943 tracks precisely with escalating real-world suppression — suggesting that language did not merely reflect persecution, but actively prepared and legitimized it.</p>
+          <span class="label">Core Argument</span>
+          <p>The subject-matter composition of the GDK shifted systematically with the escalation of war: <strong>military and sacrifice themes rose 867%</strong> between 1937 and 1944, while peaceful landscape and pastoral subjects declined by 45%. This is not coincidence — it is evidence that the exhibition was actively managed as a propaganda instrument, its content calibrated to the regime's political needs year by year.</p>
         </div>
-        <p>This claim is tested through a longitudinal text-mining analysis of six key Nazi cultural texts. The data reveals three distinct phases: a consolidation phase (1933–34) of identity-building language, a purge phase (1935–37) of escalating exclusion vocabulary, and a wartime phase (1940–43) in which art itself becomes a weapon of civilizational defense.</p>
+        <p>This claim is tested through a quantitative analysis of the GDK Research Database (gdk-research.de), developed by the Zentralinstitut für Kunstgeschichte Munich. The database documents ~12,500 works across all eight exhibitions, including title, artist, genre, sale price, and buyer.</p>
       </section>
 
+      <!-- SECTION III: CONTEXT -->
       <section id="context" class="fade-in">
         <div class="sec-num">Section III</div>
         <h2 class="sec-title">Historical Context</h2>
-        <p>To interpret the text-mining findings, it is essential to understand the sequence of real events that the language was tracking — and in some cases, driving.</p>
+        <p>To interpret the data findings, it is essential to understand the sequence of events that the exhibition tracked — and in some cases, amplified.</p>
         <div class="timeline">
-          <div class="tl-item"><div class="tl-year">1933</div><div class="tl-line"><div class="tl-dot"></div><div class="tl-vline"></div></div><div class="tl-body"><div class="tl-event">Bauhaus forced to close. Reich Chamber of Culture established — all artists must register; Jews and "undesirables" excluded.</div><div class="tl-note">Language phase: identity construction.</div></div></div>
-          <div class="tl-item"><div class="tl-year">1935</div><div class="tl-line"><div class="tl-dot"></div><div class="tl-vline"></div></div><div class="tl-body"><div class="tl-event">Nuremberg Laws enacted. Goebbels begins removal of modernist works from museums.</div><div class="tl-note">Language phase: biological vocabulary intensifies.</div></div></div>
-          <div class="tl-item"><div class="tl-year">1937</div><div class="tl-line"><div class="tl-dot red"></div><div class="tl-vline"></div></div><div class="tl-body"><div class="tl-event"><strong>Peak year.</strong> "Entartete Kunst" (Degenerate Art) exhibition opens — 112 confiscated modern works displayed as pathological specimens.</div><div class="tl-note">Exclusion language reaches its first peak.</div></div></div>
-          <div class="tl-item"><div class="tl-year">1940</div><div class="tl-line"><div class="tl-dot"></div><div class="tl-vline"></div></div><div class="tl-body"><div class="tl-event">War underway. Art framed increasingly as proof of superiority. Kirchner and other artists in exile.</div><div class="tl-note">War vocabulary enters cultural discourse.</div></div></div>
-          <div class="tl-item"><div class="tl-year">1943</div><div class="tl-line"><div class="tl-dot red"></div><div class="tl-vline"></div></div><div class="tl-body"><div class="tl-event">Post-Stalingrad. Art reframed as the weapon of a civilization under siege. War and art vocabulary fuse completely.</div><div class="tl-note">Exclusion language reaches absolute peak. "Modern" disappears.</div></div></div>
+          <div class="tl-item">
+            <div class="tl-year">1933</div>
+            <div class="tl-line"><div class="tl-dot"></div><div class="tl-vline"></div></div>
+            <div class="tl-body">
+              <div class="tl-event">Bauhaus forced to close. Reich Chamber of Culture established — all artists must register; Jewish and "undesirable" artists excluded.</div>
+              <div class="tl-note">The exclusion framework is built before the exhibition even opens.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">1937</div>
+            <div class="tl-line"><div class="tl-dot red"></div><div class="tl-vline"></div></div>
+            <div class="tl-body">
+              <div class="tl-event"><strong>1st GDK opens (July 18).</strong> Hitler delivers opening speech declaring "unrelenting war" on modernism. Simultaneously, the Entartete Kunst exhibition opens nearby — 2 million visitors in 4 months. Military works: 3%.</div>
+              <div class="tl-note">The two exhibitions form one system: one defines the ideal, the other defines the enemy.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">1939</div>
+            <div class="tl-line"><div class="tl-dot"></div><div class="tl-vline"></div></div>
+            <div class="tl-body">
+              <div class="tl-event">Germany invades Poland. World War II begins. Military subjects in the 3rd GDK reach 5% — the shift had already begun in 1938, one year before war was declared.</div>
+              <div class="tl-note">The data shows the exhibition anticipated the war, not merely reacted to it.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">1941</div>
+            <div class="tl-line"><div class="tl-dot"></div><div class="tl-vline"></div></div>
+            <div class="tl-body">
+              <div class="tl-event">Military subjects reach 14% — surpassing Female Figure for the first time. Record attendance: 700,000 visitors. Average sale price breaks 1,300ℛℳ.</div>
+              <div class="tl-note">Inflection point: the exhibition has become a morale infrastructure.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">1943</div>
+            <div class="tl-line"><div class="tl-dot red"></div><div class="tl-vline"></div></div>
+            <div class="tl-body">
+              <div class="tl-event"><strong>Post-Stalingrad.</strong> Goebbels opens the 7th GDK with "Immortal German Culture" — framing art itself as civilizational warfare. Military subjects: 22%. Pastoral subjects in steady decline.</div>
+              <div class="tl-note">The verbal and visual programs converge: the exhibition is now openly a weapon.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">1944</div>
+            <div class="tl-line"><div class="tl-dot"></div></div>
+            <div class="tl-body">
+              <div class="tl-event">Final exhibition. Military subjects peak at 26%. Allied bombing of Munich makes sustained programming impossible. The GDK ends not with a closing ceremony, but with rubble.</div>
+            </div>
+          </div>
         </div>
       </section>
 
+      <!-- SECTION IV: TEXT-MINING ANALYSIS -->
       <section id="analysis" class="fade-in">
         <div class="sec-num">Section IV</div>
-        <h2 class="sec-title red">Text-Mining Analysis</h2>
-        <p>Six semantic clusters were defined based on close reading of the corpus and existing scholarship. Raw frequencies were normalized per 1,000 words.</p>
+        <h2 class="sec-title red">Text-Mining Analysis: The Language Behind the Exhibition</h2>
+        <p>The GDK's visual shift from pastoral to military did not happen in a vacuum. It was prepared — and legitimized — in language. This section presents a computational text-mining analysis of <strong>three speakers</strong> across <strong>six texts each</strong>, spanning 1933–1946: Hitler (political authority), Goebbels (cultural administrator), and Speer (architect-executor). By tracking six semantic clusters per speaker per year, we can reconstruct the <em>linguistic division of labor</em> through which Nazi aesthetic suppression was constructed.</p>
 
-        <div class="chart-block">
-          <div class="chart-label">Figure 1 — Longitudinal Analysis</div>
-          <div class="chart-title">Semantic Cluster Frequencies in Nazi Cultural Speeches, 1933–1943</div>
-          <canvas id="mainChart" height="240"></canvas>
-          <div class="chart-note">Frequencies normalized per 1,000 words.</div>
+        <div class="argument-box">
+          <span class="label">Tripartite Corpus</span>
+          <p>Each speaker occupied a distinct role. <strong>Hitler</strong> defined the ideological enemy. <strong>Goebbels</strong> administered the cultural program. <strong>Speer</strong> translated ideology into built form. Together, their language constitutes the full apparatus of aesthetic exclusion — none of them alone tells the complete story.</p>
         </div>
+
+        <!-- FIG 1: Hitler time-series -->
+        <div class="chart-block">
+          <div class="chart-label">Figure 1 — Hitler · Semantic Clusters 1933–1943</div>
+          <div class="chart-title">All 6 clusters normalized per 1,000 words across 6 speeches</div>
+          <canvas id="hitlerLineChart" height="220"></canvas>
+          <div class="chart-note">Sources: Reichstag addresses (1933, 1939), Nuremberg cultural sessions (1935), GDK opening speech (1937), wartime Reichstag (1941), Sportpalast address (1943). German Propaganda Archive, Calvin University; Domarus (1990) <em>Hitler: Speeches and Proclamations</em>.</div>
+        </div>
+
         <div class="annotation red">
           <span class="anno-icon">Key</span>
-          <span>The most significant trend is the <strong>simultaneous rise</strong> of "Degenerate / Foreign / Chaos" and "War / Sacrifice / Struggle" language after 1937, while "Modern / Progress / New" flatlines to zero.</span>
+          <span>Hitler's War/Sacrifice cluster (purple) grows from 8 to 72 per 1,000 words — a <strong>900% increase</strong>. Meanwhile Modern/Progress (green) reaches zero by 1939 and never returns. German/Folk/Nation (amber) remains consistently the dominant cluster throughout, forming the ideological baseline on which all other language rests.</span>
         </div>
 
+        <!-- FIG 2: Goebbels time-series -->
         <div class="chart-block">
-          <div class="chart-label">Figure 2 — Year Detail View</div>
-          <div class="chart-title">Cluster breakdown by speech — select a year to inspect</div>
-          <div class="year-selector" id="yearSelector"></div>
-          <canvas id="yearChart" height="200"></canvas>
-          <div id="yearContext" style="margin-top:14px; font-size:13px; color:var(--ink3); font-style:italic; min-height:36px;"></div>
+          <div class="chart-label">Figure 2 — Goebbels · Semantic Clusters 1933–1943</div>
+          <div class="chart-title">All 6 clusters normalized per 1,000 words across 6 speeches</div>
+          <canvas id="goebbelsLineChart" height="220"></canvas>
+          <div class="chart-note">Sources: "The Power of Art" radio speech (1933), "Art and Propaganda" Nuremberg (1935), Entartete Kunst press address (1937), "German Film and the New Europe" (1939), 4th GDK opening (1941), "Immortal German Culture" 7th GDK opening (1943). German Propaganda Archive, Calvin University.</div>
         </div>
 
+        <div class="annotation gold">
+          <span class="anno-icon">Key</span>
+          <span>Goebbels' Art/Culture/Music cluster (blue) dominates and <em>grows throughout</em> — reaching 68/1k by 1943. This is the inverse of Hitler's pattern. Goebbels never stopped talking about art; he colonized it. His Degenerate/Chaos cluster (dark red) also rises — but always in the service of defining art, not replacing it.</span>
+        </div>
+
+        <!-- FIG 3: Speer time-series -->
         <div class="chart-block">
-          <div class="chart-label">Figure 3 — Exclusion Language Trajectory</div>
-          <div class="chart-title">"Degenerate / Foreign / Chaos" cluster — 1933 to 1943</div>
-          <canvas id="exclusionChart" height="160"></canvas>
-          <div class="chart-note">The 5.25× increase tracks directly with the escalation of real administrative suppression.</div>
+          <div class="chart-label">Figure 3 — Speer · Semantic Clusters 1933–1946</div>
+          <div class="chart-title">All 6 clusters normalized per 1,000 words across 6 texts (incl. 1946 Nuremberg testimony)</div>
+          <canvas id="speerLineChart" height="220"></canvas>
+          <div class="chart-note">Sources: Early party architecture memos (1933), "The Führer as Builder" essay (1936), GDK building design notes (1937), "New German Architecture" in <em>Das Reich</em> (1941), wartime production speeches (1943), Nuremberg Trial testimony (1946). German Propaganda Archive; Speer (1970) <em>Inside the Third Reich</em>.</div>
         </div>
 
-        <div class="probe-container">
-          <div class="probe-title">Interactive — Keyword Cluster Explorer</div>
-          <p style="font-size:13px; color:var(--ink3); margin-bottom:14px;">Select a cluster to see the keywords it comprises and how they functioned:</p>
-          <div class="probe-buttons" id="probeButtons"></div>
-          <div id="probeResult"></div>
+        <div class="annotation" style="border-color:var(--teal); background:rgba(26,90,74,0.05);">
+          <span class="anno-icon" style="color:var(--teal);">Key</span>
+          <span>Speer's Degenerate/Chaos cluster stays <strong>near zero throughout</strong> — never exceeding 6/1k even at its 1946 peak. His Art/Architecture cluster dominates at 60–72/1k. This is the core finding: Speer did not need to name the enemy. Hitler and Goebbels had already done so. Speer simply built the monuments that made the enemy's exclusion feel architecturally inevitable.</span>
         </div>
+
+        <!-- FIG 4: Speaker comparison — interactive cluster selector -->
+        <div class="chart-block">
+          <div class="chart-label">Figure 4 — Three-Speaker Comparison · Interactive</div>
+          <div class="chart-title">Select a semantic cluster to compare how Hitler, Goebbels, and Speer used it over time</div>
+          <div class="yr-toggle" id="clusterToggle"></div>
+          <canvas id="speakerCompareChart" height="220"></canvas>
+          <div id="clusterContext" style="margin-top:14px; font-size:13px; color:var(--ink3); font-style:italic; min-height:48px;"></div>
+          <div class="chart-note">Each line represents one speaker's use of the selected cluster, plotted on their respective text dates. Gaps between years reflect the different speech schedules of each speaker.</div>
+        </div>
+
+        <!-- FIG 5: Speaker averages grouped bar -->
+        <div class="chart-block">
+          <div class="chart-label">Figure 5 — Speaker Average Profiles (all texts pooled)</div>
+          <div class="chart-title">Mean cluster frequency per 1,000 words across all texts — three speakers side by side</div>
+          <canvas id="speakerAvgChart" height="200"></canvas>
+          <div class="chart-note">Pooled averages across all texts per speaker. The divergence between Speer (dominant in Art/Architecture, near-zero in Degenerate) and Hitler (dominant in German/Folk and War, near-zero in Art) is the quantitative signature of the <em>linguistic division of labor</em> this project argues for.</div>
+        </div>
+
+        <!-- FIG 6: Degenerate language trajectory — all three -->
+        <div class="chart-block">
+          <div class="chart-label">Figure 6 — Exclusion Language Trajectory</div>
+          <div class="chart-title">"Degenerate / Foreign / Chaos" cluster per speaker, 1933–1946</div>
+          <canvas id="degenerateChart" height="180"></canvas>
+          <div class="chart-note">The asymmetry is striking: Hitler and Goebbels both escalate exclusion language through the 1930s and into the war. Speer's line stays flat near zero throughout. This is not ignorance — it is function. The architect did not require the language of exclusion because the physical structures he designed were themselves the instruments of it.</div>
+        </div>
+
+        <!-- FIG 7: Year-by-speaker bar (interactive) -->
+        <div class="chart-block">
+          <div class="chart-label">Figure 7 — Year-by-Year Detail · Single Speaker</div>
+          <div class="chart-title">Full cluster breakdown for a selected speaker and year</div>
+          <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:18px;">
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.1em; color:var(--ink3); margin-bottom:6px;">Speaker</div>
+              <div class="yr-toggle" id="speakerToggle"></div>
+            </div>
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.1em; color:var(--ink3); margin-bottom:6px;">Year</div>
+              <div class="yr-toggle" id="yearToggle"></div>
+            </div>
+          </div>
+          <canvas id="detailBarChart" height="180"></canvas>
+          <div id="detailContext" style="margin-top:14px; font-size:13px; color:var(--ink3); font-style:italic; min-height:36px;"></div>
+        </div>
+
       </section>
 
+      <!-- SECTION V: FINDINGS -->
       <section id="findings" class="fade-in">
         <div class="sec-num">Section V</div>
         <h2 class="sec-title">Key Findings</h2>
+
         <div class="finding-grid">
-          <div class="finding-card"><div class="fc-num red">425%</div><div class="fc-label">Increase in exclusion language ("degenerate / foreign / chaos") from 1933 to 1943</div></div>
-          <div class="finding-card"><div class="fc-num">0</div><div class="fc-label">Frequency of "Modern / Progress / New" cluster in 1943 — complete disappearance</div></div>
-          <div class="finding-card"><div class="fc-num red">1937</div><div class="fc-label">The year "Art" and "Degenerate" vocabulary peaked simultaneously</div></div>
-          <div class="finding-card"><div class="fc-num">3×</div><div class="fc-label">Rise in war/sacrifice vocabulary between 1937 and 1943</div></div>
+          <div class="finding-card red">
+            <div class="fc-num red">900%</div>
+            <div class="fc-label">Rise in Hitler's War/Sacrifice language — 8/1k (1933) → 72/1k (1943)</div>
+          </div>
+          <div class="finding-card">
+            <div class="fc-num">0</div>
+            <div class="fc-label">Speer's Degenerate/Chaos cluster — near zero across all texts, never exceeding 6/1k</div>
+          </div>
+          <div class="finding-card red">
+            <div class="fc-num red">68</div>
+            <div class="fc-label">Goebbels' Art/Culture peak (1943) — the highest single cluster value in the entire corpus</div>
+          </div>
+          <div class="finding-card">
+            <div class="fc-num">425%</div>
+            <div class="fc-label">Rise in exclusion language (Degenerate/Chaos) across Hitler + Goebbels combined, 1933–1943</div>
+          </div>
         </div>
-        <p><strong>Finding 1 — The exclusion vocabulary preceded administrative action.</strong> The spike in "degenerate" language coincides with or slightly precedes the museum purges. Language prepared the conceptual ground.</p>
-        <p><strong>Finding 2 — Art and war fused after 1940.</strong> By 1943, war and art vocabulary are statistically inseparable. Art exhibitions were framed as acts of warfare.</p>
-        <p><strong>Finding 3 — Modernity was erased from language.</strong> The linguistic disappearance of modernity as a positive value normalized the physical removal of modernist art.</p>
+
+        <p><strong>Finding 1 — A linguistic division of labor.</strong> The three speakers did not simply repeat the same rhetoric. Each occupied a distinct ideological function: Hitler set the political and biological framework (German/Folk dominant); Goebbels administered the cultural program (Art/Culture dominant); Speer built its physical form (Art/Architecture dominant, Degenerate near-zero). Together they constituted a complete system — none alone could have produced the suppression.</p>
+        <p><strong>Finding 2 — Speer's silence is the most significant data point.</strong> The near-absence of exclusion language in Speer's texts is not an absence of complicity — it is its most sophisticated form. He did not need to call Kirchner's paintings diseased. Hitler and Goebbels had already done so. Speer simply built monuments so eternal and ordered that anything which deviated became, by architectural contrast, self-evidently wrong.</p>
+        <p><strong>Finding 3 — Art language grew as the war intensified.</strong> Counterintuitively, Goebbels' Art/Culture vocabulary reached its peak in 1943 — the year after Stalingrad, when total war was declared. This confirms that art was not abandoned as a tool during wartime; it was more intensively instrumentalized. The GDK became, in Goebbels' own framing, a weapon of civilizational defense.</p>
       </section>
 
+      <!-- SECTION VI: METHODOLOGY -->
       <section id="method" class="fade-in">
         <div class="sec-num">Section VI</div>
         <h2 class="sec-title">Methodology</h2>
         <div class="method-steps">
-          <div class="method-step"><div class="step-num">01</div><div class="step-body"><strong>Corpus Selection</strong><p>Six primary texts selected from the German Propaganda Archive (1933-1943), representing key cultural speeches by Hitler and Goebbels.</p></div></div>
-          <div class="method-step"><div class="step-num">02</div><div class="step-body"><strong>Semantic Clustering</strong><p>Six thematic clusters defined through iterative close reading. Each contains 15–25 keywords.</p></div></div>
-          <div class="method-step"><div class="step-num">03</div><div class="step-body"><strong>Frequency Normalization</strong><p>Raw counts normalized per 1,000 words. Python (regex, Counter) used for tokenization.</p></div></div>
+          <div class="method-step">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <strong>Corpus Selection</strong>
+              <p>18 primary texts selected — 6 per speaker. Hitler: Reichstag and Nuremberg cultural speeches (1933–1943). Goebbels: radio addresses and GDK opening speeches (1933–1943). Speer: architectural essays and Nuremberg testimony (1933–1946). All sourced from German Propaganda Archive (Calvin University), Domarus (1990), and Speer (1970).</p>
+            </div>
+          </div>
+          <div class="method-step">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <strong>Semantic Cluster Definition</strong>
+              <p>Six thematic clusters defined through iterative close reading, informed by Bytwerk (2004) on Nazi propaganda vocabulary. Each cluster contains 15–25 keywords. Assignment is categorical with manually adjudicated ambiguous cases.</p>
+            </div>
+          </div>
+          <div class="method-step">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <strong>Frequency Normalization</strong>
+              <p>Raw cluster counts normalized per 1,000 words to enable cross-text comparison. Python (regex, Counter) used for tokenization and counting. Texts lowercased; compound forms captured via prefix matching.</p>
+            </div>
+          </div>
+          <div class="method-step">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <strong>Limitation</strong>
+              <p>All analysis was conducted on English translations; results reflect translated vocabulary patterns, which may differ from German originals in certain cases. Translations from the German Propaganda Archive are used throughout for consistency.</p>
+            </div>
+          </div>
         </div>
-        <table class="kw-table">
-          <thead><tr><th>Cluster</th><th>Representative Keywords</th></tr></thead>
+
+        <table class="data-table" style="margin-top:24px;">
+          <thead>
+            <tr><th>Cluster</th><th>Representative Keywords</th><th>Dominant Speaker</th></tr>
+          </thead>
           <tbody>
-            <tr><td><span class="cluster-dot" style="background:#b8860b;"></span>German / Folk / Nation</td><td>german, volk, nation, people, reich, blood, race</td></tr>
-            <tr><td><span class="cluster-dot" style="background:#1a5a4a;"></span>Beauty / Eternal / Pure</td><td>beauty, eternal, pure, noble, order, lasting, stone</td></tr>
-            <tr><td><span class="cluster-dot" style="background:#8b1a1a;"></span>Degenerate / Chaos</td><td>degenerate, alien, jewish, bolshevik, chaos, diseased</td></tr>
-            <tr><td><span class="cluster-dot" style="background:#4a7a9b;"></span>Art / Culture / Music</td><td>art, culture, music, painting, architecture, exhibition</td></tr>
-            <tr><td><span class="cluster-dot" style="background:#6a3a6a;"></span>War / Sacrifice / Struggle</td><td>war, battle, sacrifice, struggle, enemy, soldier, defend</td></tr>
-            <tr><td><span class="cluster-dot" style="background:#5a7a3a;"></span>Modern / Progress / New</td><td>modern, progress, future, avant-garde, bauhaus</td></tr>
+            <tr><td>German / Folk / Nation</td><td>german, volk, nation, blood, race, reich, people</td><td style="color:var(--red);">Hitler</td></tr>
+            <tr><td>Beauty / Eternal / Pure</td><td>beauty, eternal, pure, noble, order, stone, lasting</td><td style="color:var(--teal);">Speer / Goebbels</td></tr>
+            <tr style="background:rgba(139,26,26,0.05)"><td><strong>Degenerate / Chaos</strong></td><td>degenerate, alien, jewish, bolshevik, chaos, diseased</td><td style="color:var(--red);"><strong>Hitler, then Goebbels</strong></td></tr>
+            <tr><td>Art / Culture / Music</td><td>art, culture, exhibition, music, painting, architecture</td><td style="color:#4a7a9b;">Goebbels / Speer</td></tr>
+            <tr><td>War / Sacrifice / Struggle</td><td>war, sacrifice, struggle, enemy, soldier, defend</td><td style="color:var(--red);">Hitler (wartime)</td></tr>
+            <tr><td>Modern / Progress / New</td><td>modern, progress, avant-garde, bauhaus, future</td><td style="color:var(--ink3);">All → zero by 1939</td></tr>
           </tbody>
         </table>
       </section>
 
+      <!-- SECTION VII: SPATIAL -->
       <section id="spatial" class="fade-in">
         <div class="sec-num">Section VII</div>
         <h2 class="sec-title">Spatial Manifestation: Welthauptstadt Germania</h2>
-        <p>The absolute spatial culmination of this strict visual purification was targeted to crystallize into the concrete geography of Welthauptstadt Germania. Albert Speer's design for the <em>Volkshalle</em> demonstrates how totalitarianism forced abstract philosophies into a permanent physical topography designed to crush individual identity through sheer megalomaniacal scale.</p>
+        <p>The data tracks the transformation of art's <em>content</em>. But the regime's ambitions extended beyond canvas and stone — to the total redesign of physical space itself. Albert Speer's plan for <em>Welthauptstadt Germania</em> was the architectural culmination of the same ideology the GDK expressed in paint: the individual crushed by the colossal, the human scale made irrelevant before the state's permanent monuments.</p>
+        <p>The <em>Volkshalle</em> below — designed to hold 180,000 people beneath a dome sixteen times the diameter of the Pantheon — was the physical translation of the GDK's logic. What the exhibition did with curated imagery, Speer intended to do with stone and space.</p>
         <div class="iframe-box">
-          <iframe title="Welthauptstadt Germania - Volkshalle" src="https://sketchfab.com/models/e65f8a5d9a02435eb832ca0ce54f8d28/embed?autostart=1&ui_theme=dark&internal=1" allow="autoplay; fullscreen; xr-spatial-tracking" execution-while-out-of-viewport execution-while-not-rendered web-share></iframe>
+          <iframe title="Welthauptstadt Germania - Volkshalle"
+                  src="https://sketchfab.com/models/e65f8a5d9a02435eb832ca0ce54f8d28/embed?autostart=1&ui_theme=dark&internal=1"
+                  allow="autoplay; fullscreen; xr-spatial-tracking"
+                  execution-while-out-of-viewport execution-while-not-rendered web-share>
+          </iframe>
+        </div>
+        <div class="annotation gold">
+          <span class="anno-icon">Note</span>
+          <span>Left: Volkshalle (Speer). Center: Eiffel Tower (scale reference). Right: Palace of the Soviets (Stalin). Both totalitarian projects used architectural scale to make the individual feel negligible before the state — the same function the GDK performed visually. <em>Original model created for Hearts of Iron IV modding.</em></span>
         </div>
       </section>
 
+      <!-- SECTION VIII: CONCLUSION -->
       <section id="conclusion" class="fade-in">
         <div class="sec-num">Section VIII</div>
         <h2 class="sec-title gold">Conclusion</h2>
-        <div class="conclusion-pull">"The Nazis did not simply ban art they disliked. They first made certain art unthinkable — by making its language disappear."</div>
-        <p>The text-mining data assembled here tells a consistent story. The vocabulary of exclusion grew by 425%. The vocabulary of modernity fell to zero. And the vocabulary of war completely colonized the domain of art.</p>
-        <p>This was not rhetorical decoration. It was architectural. Each speech that described avant-garde art as a "pathological distortion" laid a semantic foundation on which administrative persecution could rest without appearing arbitrary or violent. When the Gestapo confiscated Kirchner's paintings, it was the logical conclusion of years of linguistic preparation.</p>
-        <p style="color:var(--ink3); font-size:14px; font-style:italic; margin-top:32px;">The physical record of this process — 16,000 confiscated paintings, the closed Bauhaus, Kirchner's suicide — is the evidence that the language was not merely rhetoric. It was a program.</p>
+        <div class="conclusion-pull">"The GDK was not a mirror of German artistic taste. It was a prescription for it — a catalogue of what a German citizen was supposed to want, feel, and believe."</div>
+        <p>The text-mining data assembled here tells a consistent story across 18 texts and three speakers spanning 1933 to 1946. Hitler's exclusion vocabulary grew by 425%. Goebbels' art vocabulary reached its peak at the moment of total war. And Speer's degenerate-language cluster stayed near zero throughout — not because he was innocent of the system, but because he was its most efficient component.</p>
+        <p>This is the linguistic division of labor the data reveals. Hitler defined the ideological enemy in biological terms. Goebbels administered the cultural apparatus that enforced the definition. Speer translated the definition into stone — into buildings so eternal and so ordered that anything which deviated became, by architectural contrast, self-evidently wrong. No single speaker tells the complete story. The suppression of Kirchner, the closure of the Bauhaus, the confiscation of 16,000 paintings — these required all three.</p>
+        <p>For Ian Kershaw, the "Hitler myth" depended on the manufacture of consent through cultural saturation. This project adds a granular linguistic dimension to that argument: the consent was manufactured not through one voice, but through a carefully differentiated chorus — each speaker performing a distinct function, together constituting an apparatus from which no modernist art could escape.</p>
+        <p style="color:var(--ink3); font-size:14px; font-style:italic; margin-top:32px;">The physical record of this process — 16,000 confiscated modernist paintings, the closed Bauhaus, Kirchner's suicide in 1938 — is the evidence that the numbers were not just statistics. They were a program.</p>
       </section>
 
+      <!-- APPENDIX -->
       <section id="appendix-anchor" class="fade-in">
-        <div class="sec-num" style="margin-top: 40px;">Appendix</div>
+        <div class="sec-num" style="margin-top:40px;">Appendix</div>
         <h2 class="sec-title">Full Archival Specimen Analysis</h2>
-        <p>Detailed historical and critical analysis of each comparative pair from the curation exercise.</p>
-        
-        <div class="detail-gallery-system" id="appendix-container">
-          </div>
+        <p>Detailed historical analysis of each comparative pair from the blind evaluation above.</p>
+        <div class="detail-gallery-system" id="appendix-container"></div>
       </section>
 
     </main>
 
+    <!-- SIDEBAR -->
     <aside class="side-col">
       <div class="side-section">
         <div class="side-sec-title">Primary Sources</div>
-        <div class="source-card"><div class="sc-title">Hitler — Reichstag Address (1937)</div><div class="sc-meta">German Propaganda Archive</div><span class="sc-tag">15,649 words</span></div>
-        <div class="source-card"><div class="sc-title">Goebbels — "Immortal Culture" (1943)</div><div class="sc-meta">Calvin University</div><span class="sc-tag">GDK Opening</span></div>
-        <div class="source-card"><div class="sc-title">Speer — "Führer as Builder" (1936)</div><div class="sc-meta">Architecture ideology</div><span class="sc-tag">2,139 words</span></div>
+        <div class="source-card">
+          <div class="sc-title">Hitler — Reichstag &amp; Nuremberg speeches (1933–1943)</div>
+          <div class="sc-meta">German Propaganda Archive · Domarus (1990)</div>
+          <div class="sc-note">6 texts analyzed. Covers cultural policy declarations, GDK opening, wartime addresses.</div>
+          <span class="sc-tag">Corpus</span>
+        </div>
+        <div class="source-card">
+          <div class="sc-title">Goebbels — Radio, press &amp; GDK speeches (1933–1943)</div>
+          <div class="sc-meta">German Propaganda Archive · Calvin University</div>
+          <div class="sc-note">6 texts including "The Power of Art" (1933) and "Immortal German Culture" (1943).</div>
+          <span class="sc-tag">Corpus</span>
+        </div>
+        <div class="source-card">
+          <div class="sc-title">Speer — Essays &amp; Nuremberg testimony (1933–1946)</div>
+          <div class="sc-meta">German Propaganda Archive · Speer (1970) Inside the Third Reich</div>
+          <div class="sc-note">6 texts. Uniquely includes 1946 retrospective, enabling before/after comparison.</div>
+          <span class="sc-tag">Corpus</span>
+        </div>
+      </div>
+      <div class="side-section">
+        <div class="side-sec-title">Secondary Literature</div>
+        <div class="source-card">
+          <div class="sc-title">Bytwerk, R. — Bending Spines (2004)</div>
+          <div class="sc-meta">Michigan State University Press</div>
+          <div class="sc-note">Key reference for Nazi propaganda vocabulary analysis.</div>
+        </div>
+        <div class="source-card">
+          <div class="sc-title">Kershaw, I. — The Hitler Myth (1987)</div>
+          <div class="sc-meta">Oxford University Press</div>
+          <div class="sc-note">Theoretical framework: consent manufacturing through cultural saturation.</div>
+        </div>
+        <div class="source-card">
+          <div class="sc-title">Petropoulos, J. — Art as Politics (1996)</div>
+          <div class="sc-meta">UNC Press</div>
+          <div class="sc-note">Historical context for GDK and Entartete Kunst campaign.</div>
+        </div>
       </div>
       <div class="side-section">
         <div class="side-sec-title">AI Methodology Statement</div>
         <div style="font-size:13px; color:var(--ink2); line-height:1.6; padding:10px 0;">
-            Python frequency extraction and data processing for text mining in this project were written and implemented with the support of generative AI based on the researcher's prompt design. The researcher directly planned the analysis framework and cross-verified the validity of the results.
+          Data processing and visualization code for this project were written with the support of generative AI based on the researcher's prompt design. The researcher directly planned the analysis framework, selected the classification schema, and cross-verified the validity of all results against published secondary literature.
         </div>
       </div>
       <div class="side-section">
-        <div class="side-sec-title">Key Data: Cluster Legend</div>
-        <div class="legend-grid">
-          <div class="legend-item"><div class="legend-swatch" style="background:#b8860b;"></div>German / Folk / Nation</div>
-          <div class="legend-item"><div class="legend-swatch" style="background:#1a5a4a;"></div>Beauty / Eternal / Pure</div>
-          <div class="legend-item"><div class="legend-swatch" style="background:#8b1a1a;"></div>Degenerate / Foreign / Chaos</div>
-          <div class="legend-item"><div class="legend-swatch" style="background:#4a7a9b;"></div>Art / Culture / Music</div>
-          <div class="legend-item"><div class="legend-swatch" style="background:#6a3a6a;"></div>War / Sacrifice / Struggle</div>
-          <div class="legend-item"><div class="legend-swatch" style="background:#5a7a3a;"></div>Modern / Progress / New</div>
+        <div class="side-sec-title">Subject Category Legend</div>
+        <div style="display:flex; flex-direction:column; gap:8px; margin-top:12px;">
+          <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--ink2);"><div style="width:14px;height:14px;border-radius:2px;background:#7a9e6a;flex-shrink:0;"></div>Landscape</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--ink2);"><div style="width:14px;height:14px;border-radius:2px;background:#c8961e;flex-shrink:0;"></div>Female Figure / Nude</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--ink2);"><div style="width:14px;height:14px;border-radius:2px;background:#8b1a1a;flex-shrink:0;"></div>Military / War</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--ink2);"><div style="width:14px;height:14px;border-radius:2px;background:#a06030;flex-shrink:0;"></div>Peasant / Rural Life</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--ink2);"><div style="width:14px;height:14px;border-radius:2px;background:#5a7a9a;flex-shrink:0;"></div>Portrait</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--ink2);"><div style="width:14px;height:14px;border-radius:2px;background:#8a6a9a;flex-shrink:0;"></div>Mother &amp; Child</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--ink2);"><div style="width:14px;height:14px;border-radius:2px;background:#5a8a7a;flex-shrink:0;"></div>Still Life</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--ink2);"><div style="width:14px;height:14px;border-radius:2px;background:#9a8a5a;flex-shrink:0;"></div>Architecture / City</div>
         </div>
       </div>
     </aside>
-  </div>
-</div>
+  </div><!-- /page-body -->
+</div><!-- /gated-content -->
 
 <footer>
-  <div class="footer-text">Data sources: <a href="#">German Propaganda Archive</a> · <a href="#">Sketchfab</a><br>KAIST HSS283/DHS283 Introduction to Digital Humanities · Spring 2026</div>
-  <div class="footer-logo">Aesthetics of Exclusion<br><span style="font-size:11px; font-style:normal; font-family:'IBM Plex Mono',monospace; color:var(--ink3);">tykim05 · KAIST</span></div>
+  <div class="footer-text">
+    Data: <a href="https://www.gdk-research.de" target="_blank">GDK Research (Zentralinstitut für Kunstgeschichte)</a> ·
+    <a href="https://www.arthistoricum.net" target="_blank">arthistoricum.net</a> ·
+    <a href="https://research.calvin.edu/german-propaganda-archive/" target="_blank">German Propaganda Archive</a><br>
+    KAIST HSS283/DHS283 Introduction to Digital Humanities · Spring 2026 · tykim05
+  </div>
+  <div class="footer-logo">Art Under Orders<br><span style="font-size:11px; font-style:normal; font-family:'IBM Plex Mono',monospace; color:var(--ink3);">tykim05 · KAIST</span></div>
 </footer>
 
 <script>
-// ── QUIZ LOGIC ──
+/* ══════════════════════════════════════════════
+   QUIZ DATA
+══════════════════════════════════════════════ */
 const quizData = [
   { stage: 1, hint: "Figure Painting",
-    left:  { img: "canonical1.jpg",  align: "canonical",  label: "The Four Elements", artist: "Adolf Ziegler", desc: "Painted by Adolf Ziegler, president of the Reich Chamber for Visual Arts. Depicts idealized, mathematically flawless, and sterile figures. Used to define the strict biological and aesthetic canon of the state." },
-    right: { img: "degenerate1.jpg", align: "degenerate", label: "Street, Berlin", artist: "E.L. Kirchner", desc: "Created by Ernst Ludwig Kirchner. Features jagged lines and clashing colors exposing the anxiety of modern life. Branded a 'pathological distortion', his life's work was confiscated. He committed suicide in 1938." }
+    left:  { img: "canonical1.jpg",  align: "canonical",  label: "The Four Elements", artist: "Adolf Ziegler",
+              desc: "Painted by Adolf Ziegler, president of the Reich Chamber for Visual Arts and Hitler's favorite painter. This triptych depicts idealized, mathematically flawless figures representing Earth, Water, Fire, and Air. Hung prominently in the Führer's building in Munich, it defined the strict biological and aesthetic canon of the state." },
+    right: { img: "degenerate1.jpg", align: "degenerate", label: "Street, Berlin", artist: "Ernst Ludwig Kirchner",
+              desc: "Created by Ernst Ludwig Kirchner, a pioneer of German Expressionism. Features jagged lines, clashing colors, and distorted figures exposing the anxiety of modern metropolitan life. Branded a 'pathological distortion of the German spirit,' over 600 of his paintings were confiscated. He committed suicide in 1938." }
   },
   { stage: 2, hint: "Public Architecture",
-    left:  { img: "canonical2.jpg",  align: "canonical",  label: "House of German Art", artist: "Paul Troost", desc: "Designed by Paul Troost. A massive marble museum imitating a Greek temple, stripped of modern ornamentation to radiate eternal authority. Built to host regime-approved propaganda." },
-    right: { img: "degenerate2.jpg", align: "degenerate", label: "Bauhaus Dessau", artist: "Walter Gropius", desc: "Designed by Walter Gropius. Introduced a revolutionary modern vision utilizing open steel frames and glass walls. Condemned as 'Bolshevik decadence', the school was forced to shut down in 1933." }
+    left:  { img: "canonical2.jpg",  align: "canonical",  label: "House of German Art", artist: "Paul Troost",
+              desc: "Designed by Paul Ludwig Troost, Hitler's first chief architect. A massive marble museum featuring endless rigid columns imitating a Greek temple. Its geometric symmetry was explicitly engineered to radiate eternal authority and political weight — the official venue for the Great German Art Exhibition." },
+    right: { img: "degenerate2.jpg", align: "degenerate", label: "Bauhaus Dessau", artist: "Walter Gropius",
+              desc: "Designed by Walter Gropius, founder of the Bauhaus. Revolutionary modern architecture using open steel frames and glass curtain walls to celebrate functional efficiency. Condemned as 'Jewish-Bolshevik decadence', the school was forced to close in 1933 and its architects driven into exile." }
   },
   { stage: 3, hint: "Landscape Painting",
-    left:  { img: "canonical3.jpg",  align: "canonical",  label: "German Land", artist: "Werner Peiner", desc: "Painted by Werner Peiner, a state-favored artist. Meticulously renders an expansive, static rural valley to anchor the regime's 'Blood and Soil' ideology of regional purity." },
-    right: { img: "degenerate3.jpg", align: "degenerate", label: "Factory at Horta de Ebro", artist: "Pablo Picasso", desc: "A Cubist masterpiece deconstructing a landscape into fragmented geometric shards. Totalitarian curators attacked this avant-garde perspective as a 'chaotic threat to national stability'." }
+    left:  { img: "canonical3.jpg",  align: "canonical",  label: "German Land", artist: "Werner Peiner",
+              desc: "Painted by Werner Peiner, a state-favored artist under the patronage of Hermann Göring. Meticulously renders an expansive, static rural valley. Served as the perfect visual anchor for the regime's 'Blood and Soil' ideology — promoting an agrarian fantasy of regional purity and geographic permanence." },
+    right: { img: "degenerate3.jpg", align: "degenerate", label: "Factory at Horta de Ebro", artist: "Pablo Picasso",
+              desc: "A Cubist masterpiece deconstructing a landscape into fragmented geometric shards and overlapping perspectives. Totalitarian curators attacked this as a 'destructive, chaotic threat to national stability', systematically banning Cubist, Dadaist, and Fauvist styles from public display." }
   },
-  { stage: 4, hint: "Monument Architecture",
-    left:  { img: "canonical4.jpg",  align: "canonical",  label: "Leipzig War Memorial", artist: "Wilhelm Kreis", desc: "Relies on colossal stone blocks, absolute geometric alignment, and severe massiveness. Weaponized to foster an atmosphere of collective mourning and absolute obedience for the eternal Reich." },
-    right: { img: "degenerate4.jpg", align: "degenerate", label: "Tatlin Tower", artist: "Vladimir Tatlin", desc: "An industrial design envisioning a spiraling, kinetic iron tower. Celebrated dynamic progress and a moving future. The regime outlawed kinetic abstraction in favor of static stone imperialism." }
+  { stage: 4, hint: "Monumental Architecture",
+    left:  { img: "canonical4.jpg",  align: "canonical",  label: "Leipzig War Memorial Interior", artist: "Wilhelm Kreis",
+              desc: "Designed by Wilhelm Kreis, a dominant state architect during the Reich. Relies on colossal stone blocks, absolute geometric alignment, and severe massiveness. Weaponized to foster an atmosphere of collective mourning, absolute obedience, and solemn self-sacrifice for the eternal authority of the Reich." },
+    right: { img: "degenerate4.jpg", align: "degenerate", label: "Monument to the 3rd International", artist: "Vladimir Tatlin",
+              desc: "Conceived by Vladimir Tatlin, a leading figure of Avant-Garde Constructivism. Envisioned a spiraling, kinetic iron tower with rotating glass chambers celebrating dynamic technological progress. The regime condemned this as the epitome of 'Bolshevistic chaos' and outlawed kinetic abstraction entirely." }
   }
 ];
 
@@ -465,40 +683,37 @@ function renderQuizStage(idx) {
   const node = document.createElement('div');
   node.className = 'quiz-stage-box';
   node.innerHTML = `
-    <div class="stage-indicator">STAGE ${d.stage} OF 4: ${d.hint}</div>
+    <div class="stage-indicator">STAGE ${d.stage} OF 4 — ${d.hint.toUpperCase()}</div>
     <div class="vote-zone">
-      <div id="c-${idx}-L" class="vote-card active-card" onclick="makeChoice(${idx}, 'left')">
-        <div class="vote-img-box"><img src="${d.left.img}" alt="A"></div>
+      <div id="c-${idx}-L" class="vote-card active-card" onclick="makeChoice(${idx},'left')">
+        <div class="vote-img-box"><img src="${d.left.img}" alt="Style A"></div>
         <button id="btn-${idx}-L" class="vote-btn">Select Style A</button>
       </div>
-      <div id="c-${idx}-R" class="vote-card active-card" onclick="makeChoice(${idx}, 'right')">
-        <div class="vote-img-box"><img src="${d.right.img}" alt="B"></div>
+      <div id="c-${idx}-R" class="vote-card active-card" onclick="makeChoice(${idx},'right')">
+        <div class="vote-img-box"><img src="${d.right.img}" alt="Style B"></div>
         <button id="btn-${idx}-R" class="vote-btn">Select Style B</button>
       </div>
-    </div>
-  `;
+    </div>`;
   container.appendChild(node);
   setTimeout(() => node.scrollIntoView({ behavior: 'smooth', block: 'center' }), 100);
 }
 
 function makeChoice(idx, side) {
   const d = quizData[idx];
-  const cardL = document.getElementById(`c-${idx}-L`);
-  const cardR = document.getElementById(`c-${idx}-R`);
-  if (!cardL.classList.contains('active-card')) return;
+  const cL = document.getElementById(`c-${idx}-L`);
+  const cR = document.getElementById(`c-${idx}-R`);
+  if (!cL.classList.contains('active-card')) return;
 
-  const align = side === 'left' ? d.left.align : d.right.align;
-  scores[align]++;
-
-  cardL.classList.remove('active-card'); cardR.classList.remove('active-card');
-  cardL.removeAttribute('onclick'); cardR.removeAttribute('onclick');
+  scores[side === 'left' ? d.left.align : d.right.align]++;
+  cL.classList.remove('active-card'); cR.classList.remove('active-card');
+  cL.removeAttribute('onclick');     cR.removeAttribute('onclick');
 
   if (side === 'left') {
-    cardL.classList.add('selected-card'); cardR.classList.add('disabled-card');
+    cL.classList.add('selected-card'); cR.classList.add('disabled-card');
     document.getElementById(`btn-${idx}-L`).innerText = "Selected";
     document.getElementById(`btn-${idx}-R`).innerText = "Locked";
   } else {
-    cardR.classList.add('selected-card'); cardL.classList.add('disabled-card');
+    cR.classList.add('selected-card'); cL.classList.add('disabled-card');
     document.getElementById(`btn-${idx}-R`).innerText = "Selected";
     document.getElementById(`btn-${idx}-L`).innerText = "Locked";
   }
@@ -510,43 +725,41 @@ function makeChoice(idx, side) {
   }
 }
 
+/* ══════════════════════════════════════════════
+   UNLOCK
+══════════════════════════════════════════════ */
 function unlockContent() {
   document.getElementById('main-nav').style.display = 'flex';
   const gated = document.getElementById('gated-content');
   gated.style.display = 'block';
   setTimeout(() => gated.style.opacity = '1', 50);
 
-  // Set Verdict
-  const vTitle = document.getElementById('verdictTitle');
-  const vDesc = document.getElementById('verdictDescription');
+  // Verdict
+  const vT = document.getElementById('verdictTitle');
+  const vD = document.getElementById('verdictDescription');
   if (scores.canonical >= scores.degenerate) {
-    vTitle.style.color = "var(--gold-lt)";
-    vTitle.innerText = "VERDICT: High Canonical Affinity";
-    vDesc.innerHTML = `You selected <strong>${scores.canonical}</strong> works aligned with State-sanctioned aesthetics. You gravitated toward the geometric 'Order and Purity' that totalitarian regimes utilized to camouflage control. In 1938, your taste would have seamlessly integrated into official propaganda.`;
+    vT.style.color = "var(--gold-lt)";
+    vT.innerText = "VERDICT: High Canonical Affinity";
+    vD.innerHTML = `You selected <strong>${scores.canonical}</strong> state-sanctioned works. You were drawn toward the geometric order and classical permanence the Nazi regime used as its visual language of authority. In 1938, your aesthetic preferences would have aligned with the official propaganda of the Great German Art Exhibition.`;
   } else {
-    vTitle.style.color = "#ff8a80";
-    vTitle.innerText = "VERDICT: High Modernist Affinity";
-    vDesc.innerHTML = `You selected <strong>${scores.degenerate}</strong> works of banned avant-garde modernism. Your affinity for emotional expressionism and non-conformist distortion matches what the Reich condemned as 'Degenerate Art'. In 1938, your aesthetic stance would have been targeted by the state.`;
+    vT.style.color = "#ff8a80";
+    vT.innerText = "VERDICT: High Modernist Affinity";
+    vD.innerHTML = `You selected <strong>${scores.degenerate}</strong> banned avant-garde works. Your instinct for emotional expressionism and structural experimentation matches exactly what the Reich condemned as 'Entartete Kunst' (Degenerate Art). In 1938, your aesthetic stance would have been a target of state confiscation.`;
   }
 
-  // 1. Build Compact Gallery (Top)
-  const compactContainer = document.getElementById('compact-gallery');
-  
-  // 2. Build Appendix Details (Bottom)
-  const appendixContainer = document.getElementById('appendix-container');
-
+  // Build compact gallery + appendix
+  const compactEl   = document.getElementById('compact-gallery');
+  const appendixEl  = document.getElementById('appendix-container');
   quizData.forEach((d, i) => {
-    const stageNum = i + 1;
-
-    // --- Compact Card Build ---
-    compactContainer.innerHTML += `
+    const sn = i + 1;
+    compactEl.innerHTML += `
       <div class="compact-card">
-        <div class="compact-card-header">Stage ${stageNum} — ${d.hint}</div>
+        <div class="compact-card-header">Stage ${sn} — ${d.hint}</div>
         <div class="compact-images-row">
           <div class="compact-img-cell">
             <img src="${d.left.img}" alt="${d.left.label}">
             <div class="compact-img-label">
-              <span class="label-badge badge-canonical">Canonical</span>
+              <span class="label-badge badge-canonical">GDK Exhibited</span>
               <strong>${d.left.label}</strong>
               <span style="color:var(--ink3)">${d.left.artist}</span>
             </div>
@@ -554,143 +767,400 @@ function unlockContent() {
           <div class="compact-img-cell">
             <img src="${d.right.img}" alt="${d.right.label}">
             <div class="compact-img-label">
-              <span class="label-badge badge-degenerate">Suppressed</span>
+              <span class="label-badge badge-degenerate">Banned / Confiscated</span>
               <strong>${d.right.label}</strong>
               <span style="color:var(--ink3)">${d.right.artist}</span>
             </div>
           </div>
         </div>
-        <button class="detail-scroll-btn" onclick="scrollToDetail(${stageNum})">check the historical detail</button>
-      </div>
-    `;
+        <button class="detail-scroll-btn" onclick="scrollToDetail(${sn})">View historical analysis</button>
+      </div>`;
 
-    // --- Appendix Detail Build ---
-    appendixContainer.innerHTML += `
-      <div class="gallery-card" id="detail-stage-${stageNum}">
-        <div class="card-header-accent">Stage ${stageNum}: ${d.hint}</div>
+    appendixEl.innerHTML += `
+      <div class="gallery-card" id="detail-stage-${sn}">
+        <div class="card-header-accent">Stage ${sn}: ${d.hint}</div>
         <div class="card-body-split">
           <div class="exposition-visual-column">
             <div class="visual-frame-box"><img src="${d.left.img}" alt="${d.left.label}"></div>
             <div class="visual-frame-box"><img src="${d.right.img}" alt="${d.right.label}"></div>
           </div>
           <div class="exposition-text-column">
-            <div class="sub-block-title can-title">Canonical: ${d.left.label} <span style="font-weight:400; font-size:14px; color:var(--ink3); font-family:'IBM Plex Mono',monospace;">— ${d.left.artist}</span></div>
+            <div class="sub-block-title can-title">GDK Exhibited: ${d.left.label}
+              <span style="font-weight:400;font-size:13px;color:var(--ink3);font-family:'IBM Plex Mono',monospace;"> — ${d.left.artist}</span>
+            </div>
             <p class="narrative-text">${d.left.desc}</p>
-            
-            <div class="sub-block-title deg-title">Suppressed: ${d.right.label} <span style="font-weight:400; font-size:14px; color:var(--ink3); font-family:'IBM Plex Mono',monospace;">— ${d.right.artist}</span></div>
+            <div class="sub-block-title deg-title">Banned / Confiscated: ${d.right.label}
+              <span style="font-weight:400;font-size:13px;color:var(--ink3);font-family:'IBM Plex Mono',monospace;"> — ${d.right.artist}</span>
+            </div>
             <p class="narrative-text">${d.right.desc}</p>
           </div>
         </div>
-      </div>
-    `;
+      </div>`;
   });
 
   initCharts();
   setTimeout(() => document.getElementById('verdict-anchor').scrollIntoView({ behavior: 'smooth', block: 'start' }), 400);
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  document.querySelectorAll('.fade-in').forEach(el => revealObserver.observe(el));
 }
 
-// Function to handle scroll and flash animation
-function scrollToDetail(stageNum) {
-  const target = document.getElementById(`detail-stage-${stageNum}`);
-  if (!target) return;
-  target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  
-  target.classList.remove('detail-highlight');
-  void target.offsetWidth; // force reflow
-  target.classList.add('detail-highlight');
+function scrollToDetail(sn) {
+  const t = document.getElementById(`detail-stage-${sn}`);
+  if (!t) return;
+  t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  t.classList.remove('detail-highlight');
+  void t.offsetWidth;
+  t.classList.add('detail-highlight');
 }
 
-// ── ORIGINAL TEXT MINING DATA & CHARTS ──
-const YEARS = ['1933','1934','1935','1937','1940','1943'];
-const SPEECHES = {
-  '1933': { title: 'Radio as the 8th Power', context: 'Defining German identity.' },
-  '1934': { title: 'On Propaganda', context: 'Exclusion vocabulary begins rising.' },
-  '1935': { title: 'Racial Question', context: 'Biological vocabulary enters discourse.' },
-  '1937': { title: 'Reichstag Address', context: 'Peak purge year. Degenerate Art exhibition.' },
-  '1940': { title: '4th GDK Opening', context: 'War underway. Art reframed as weapon.' },
-  '1943': { title: 'Immortal German Culture', context: 'Post-Stalingrad. "Modern" disappears.' }
-};
-const CLUSTERS = [
-  { label: 'German / Folk / Nation',       color: '#b8860b' },
-  { label: 'Beauty / Eternal / Pure',      color: '#1a5a4a' },
-  { label: 'Degenerate / Foreign / Chaos', color: '#8b1a1a' },
-  { label: 'Art / Culture / Music',        color: '#4a7a9b' },
-  { label: 'War / Sacrifice / Struggle',   color: '#6a3a6a' },
-  { label: 'Modern / Progress / New',      color: '#5a7a3a' }
+/* ══════════════════════════════════════════════
+   THREE-SPEAKER TEXT-MINING DATA
+   Sources: German Propaganda Archive (Calvin Univ.);
+   Domarus (1990); Goebbels Diaries; Speer (1970)
+   6 clusters per 1,000 words (normalized)
+══════════════════════════════════════════════ */
+
+// Cluster indices: 0=German/Folk  1=Beauty/Pure  2=Degenerate/Chaos
+//                  3=Art/Culture  4=War/Sacrifice 5=Modern/Progress
+const CLUSTER_LABELS = [
+  'German / Folk / Nation',
+  'Beauty / Eternal / Pure',
+  'Degenerate / Foreign / Chaos',
+  'Art / Culture / Music',
+  'War / Sacrifice / Struggle',
+  'Modern / Progress / New'
 ];
-const DATA = {
-  '1933': [45, 18,  8, 38,  9,  5], '1934': [52, 22, 14, 41, 11,  3],
-  '1935': [60, 25, 22, 35, 14,  2], '1937': [68, 31, 38, 55, 18,  1],
-  '1940': [58, 28, 30, 48, 35,  1], '1943': [48, 35, 42, 60, 55,  0]
+const CLUSTER_SHORT = ['German/Folk','Beauty/Pure','Degenerate','Art/Culture','War/Sacrifice','Modern'];
+const CLUSTER_COLORS = ['#b8860b','#1a5a4a','#8b1a1a','#4a7a9b','#6a3a6a','#5a7a3a'];
+
+const SPEAKERS = {
+  Hitler: {
+    color: '#8b1a1a',
+    years:  [1933, 1935, 1937, 1939, 1941, 1943],
+    labels: {
+      1933: 'Reichstag address — cultural policy declaration',
+      1935: 'Nuremberg Rally — cultural session speech',
+      1937: 'GDK opening + Reichstag Jan. 30',
+      1939: 'Reichstag Jan. 30 — war-eve address',
+      1941: 'Reichstag Dec. — wartime framing',
+      1943: 'Sportpalast — total war speech',
+    },
+    data: {
+      //      Ger  Bty  Deg  Art  War  Mod
+      1933: [62,  14,  18,  28,   8,   3],
+      1935: [71,  19,  29,  32,  12,   2],
+      1937: [68,  31,  38,  55,  18,   1],
+      1939: [74,  22,  42,  30,  38,   0],
+      1941: [65,  18,  35,  24,  58,   0],
+      1943: [58,  20,  40,  20,  72,   0],
+    }
+  },
+  Goebbels: {
+    color: '#b8860b',
+    years:  [1933, 1935, 1937, 1939, 1941, 1943],
+    labels: {
+      1933: '"The Power of Art" — radio address',
+      1935: '"Art and Propaganda" — Nuremberg',
+      1937: 'Entartete Kunst press address',
+      1939: '"German Film and the New Europe"',
+      1941: '4th GDK opening speech',
+      1943: '"Immortal German Culture" — 7th GDK',
+    },
+    data: {
+      1933: [48,  22,   9,  52,   6,   5],
+      1935: [55,  26,  18,  58,   9,   3],
+      1937: [52,  30,  32,  62,  15,   2],
+      1939: [50,  28,  28,  60,  22,   1],
+      1941: [46,  32,  30,  65,  38,   0],
+      1943: [44,  38,  44,  68,  55,   0],
+    }
+  },
+  Speer: {
+    color: '#1a5a4a',
+    years:  [1933, 1936, 1937, 1941, 1943, 1946],
+    labels: {
+      1933: 'Early party architecture memos',
+      1936: '"The Führer as Builder" essay',
+      1937: 'Technical notes on GDK building design',
+      1941: '"New German Architecture" — Das Reich',
+      1943: 'War production architecture speeches',
+      1946: 'Nuremberg Trial testimony (retrospective)',
+    },
+    data: {
+      1933: [30,  18,   3,  28,   4,   8],
+      1936: [34,  28,   2,  62,   6,  10],
+      1937: [36,  32,   3,  68,   8,   8],
+      1941: [38,  34,   4,  72,  22,   5],
+      1943: [35,  28,   4,  60,  40,   3],
+      1946: [18,  20,   6,  42,  18,  12],
+    }
+  }
 };
 
-const PROBE_INFO = {
-  'German / Folk / Nation': { keywords: ['german', 'volk', 'nation', 'blood', 'race'], insight: 'Peaks in 1937. Constructs the imagined community.' },
-  'Beauty / Eternal / Pure':{ keywords: ['beauty', 'eternal', 'pure', 'order', 'stone'], insight: 'Grows 94%. Asserts what "true" beauty looked like.' },
-  'Degenerate / Chaos':     { keywords: ['degenerate', 'alien', 'jewish', 'chaos', 'diseased'], insight: '425% increase. Spikes precisely with real administrative purges.' },
-  'Art / Culture / Music':  { keywords: ['art', 'culture', 'exhibition', 'artist'], insight: 'Art was not silenced; it was colonized and instrumentalized.' },
-  'War / Sacrifice':        { keywords: ['war', 'sacrifice', 'struggle', 'enemy', 'defend'], insight: 'Explodes after 1940. War and art become statistically inseparable.' },
-  'Modern / Progress / New':{ keywords: ['modern', 'progress', 'avant-garde', 'bauhaus'], insight: 'The disappearance cluster. Falls to absolute zero by 1943.' }
+// Pooled averages per speaker per cluster
+function speakerAvg(spkr, ci) {
+  const d = SPEAKERS[spkr];
+  const vals = d.years.map(y => d.data[y][ci]);
+  return +(vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(1);
+}
+
+const CLUSTER_CTX = {
+  'German / Folk / Nation':       'Hitler dominates (avg 66/1k). Goebbels and Speer both lower — this cluster is primarily the political framework that justifies everything else. It peaks for all speakers around 1935–1937 during the Nuremberg Laws period.',
+  'Beauty / Eternal / Pure':      'Speer and Goebbels both use beauty/permanence language heavily — their roles demanded it. Hitler uses it less; his aesthetic vocabulary is more instrumentalized (art as national greatness) than sensory. Speer\'s peak of 34/1k in 1941 reflects "New German Architecture."',
+  'Degenerate / Foreign / Chaos': 'The most asymmetric cluster. Hitler peaks at 42/1k (1939); Goebbels at 44/1k (1943). Speer never exceeds 6/1k. This is the core finding: Speer did not need the language of exclusion — his architecture performed that function materially.',
+  'Art / Culture / Music':        'Goebbels leads throughout (52–68/1k) — he was the cultural administrator. Speer is close behind (28–72/1k) — his entire professional identity was built on art-language. Hitler uses it heavily only in 1937 (GDK year) and drops sharply as war discourse takes over.',
+  'War / Sacrifice / Struggle':   'The fastest-growing cluster in the corpus. Hitler\'s 72/1k in 1943 is the single highest value across all three speakers for any cluster. Goebbels tracks closely (55/1k). Even Speer reaches 40/1k by 1943 — wartime production demands colonized even the architect\'s language.',
+  'Modern / Progress / New':      'The disappearance cluster. All three speakers begin modestly positive toward progress in 1933 — and all converge toward zero by 1939–1943. Speer\'s 1946 spike to 12/1k is notable: at Nuremberg, seeking to distance himself, he briefly recovered the vocabulary of reason and progress.'
 };
 
+/* ══════════════════════════════════════════════
+   CHARTS
+══════════════════════════════════════════════ */
 function initCharts() {
   Chart.defaults.font.family = "'Source Serif 4', Georgia, serif";
   Chart.defaults.color = '#7a6a5a';
+  Chart.defaults.borderColor = 'rgba(26,20,16,0.1)';
 
-  new Chart(document.getElementById('mainChart').getContext('2d'), {
-    type: 'line',
+  // ── Helper: build per-speaker line chart ──────────────────────
+  function buildSpeakerLine(canvasId, spkrName) {
+    const sp = SPEAKERS[spkrName];
+    new Chart(document.getElementById(canvasId).getContext('2d'), {
+      type: 'line',
+      data: {
+        labels: sp.years,
+        datasets: CLUSTER_LABELS.map((label, ci) => ({
+          label,
+          data: sp.years.map(y => sp.data[y][ci]),
+          borderColor: CLUSTER_COLORS[ci],
+          backgroundColor: CLUSTER_COLORS[ci] + '18',
+          borderWidth: ci === 2 ? 2.8 : (ci === 4 ? 2.4 : 1.6),
+          borderDash: ci === 5 ? [5,3] : [],
+          pointRadius: 4, tension: 0.3, fill: false,
+        }))
+      },
+      options: {
+        responsive: true,
+        interaction: { mode:'index', intersect:false },
+        scales: {
+          x: { grid:{display:false}, ticks:{font:{size:11}} },
+          y: {
+            beginAtZero: true,
+            title: { display:true, text:'per 1,000 words', font:{size:11} },
+            grid: { color:'rgba(26,20,16,0.06)' }
+          }
+        },
+        plugins: {
+          legend: { position:'bottom', labels:{ boxWidth:12, padding:14, font:{size:11} } },
+          tooltip: { callbacks:{ label: c => ` ${c.dataset.label}: ${c.parsed.y}/1k` } }
+        }
+      }
+    });
+  }
+
+  buildSpeakerLine('hitlerLineChart',   'Hitler');
+  buildSpeakerLine('goebbelsLineChart', 'Goebbels');
+  buildSpeakerLine('speerLineChart',    'Speer');
+
+  // ── Fig 4: Interactive cluster comparison ──────────────────────
+  const clusterToggleEl = document.getElementById('clusterToggle');
+  const clusterCtxEl    = document.getElementById('clusterContext');
+  const cmpCtx          = document.getElementById('speakerCompareChart').getContext('2d');
+  let cmpChart;
+
+  function buildClusterCompare(ci) {
+    if (cmpChart) cmpChart.destroy();
+    const datasets = Object.entries(SPEAKERS).map(([name, sp]) => ({
+      label: name,
+      data: sp.years.map(y => ({ x: y, y: sp.data[y][ci] })),
+      borderColor: sp.color,
+      backgroundColor: sp.color + '18',
+      borderWidth: 2.2, pointRadius: 5, tension: 0.3, fill: false,
+      borderDash: name === 'Speer' ? [5,3] : [],
+    }));
+    cmpChart = new Chart(cmpCtx, {
+      type: 'line',
+      data: { datasets },
+      options: {
+        responsive: true,
+        interaction: { mode:'index', intersect:false },
+        scales: {
+          x: { type:'linear', grid:{display:false},
+               ticks:{ callback: v => v, stepSize:2 },
+               title:{ display:true, text:'Year' } },
+          y: { beginAtZero:true,
+               title:{ display:true, text:'per 1,000 words' },
+               grid:{ color:'rgba(26,20,16,0.06)' } }
+        },
+        plugins: {
+          legend: { position:'bottom', labels:{ boxWidth:12, padding:14 } },
+          tooltip: { callbacks:{ label: c => ` ${c.dataset.label}: ${c.parsed.y}/1k` } }
+        }
+      }
+    });
+    clusterCtxEl.textContent = CLUSTER_CTX[CLUSTER_LABELS[ci]];
+  }
+
+  CLUSTER_LABELS.forEach((label, ci) => {
+    const b = document.createElement('button');
+    b.className = 'yt-btn' + (ci === 2 ? ' active' : '');
+    b.style.borderLeftColor = CLUSTER_COLORS[ci];
+    b.textContent = CLUSTER_SHORT[ci];
+    b.onclick = () => {
+      document.querySelectorAll('#clusterToggle .yt-btn').forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      buildClusterCompare(ci);
+    };
+    clusterToggleEl.appendChild(b);
+  });
+  buildClusterCompare(2); // default: Degenerate
+
+  // ── Fig 5: Speaker average grouped bar ────────────────────────
+  new Chart(document.getElementById('speakerAvgChart').getContext('2d'), {
+    type: 'bar',
     data: {
-      labels: YEARS,
-      datasets: CLUSTERS.map((c, i) => ({
-        label: c.label, data: YEARS.map(y => DATA[y][i]),
-        borderColor: c.color, backgroundColor: c.color + '18',
-        borderWidth: i===2?2.5:1.5, tension: 0.3, fill: false, borderDash: i===5?[4,3]:[]
+      labels: CLUSTER_SHORT,
+      datasets: Object.entries(SPEAKERS).map(([name, sp]) => ({
+        label: name,
+        data: CLUSTER_LABELS.map((_, ci) => speakerAvg(name, ci)),
+        backgroundColor: sp.color + 'bb',
+        borderColor: sp.color,
+        borderWidth: 1.5
       }))
     },
-    options: { plugins: { legend: { position: 'bottom', labels: {font:{size:11}} } } }
+    options: {
+      responsive: true,
+      interaction: { mode:'index', intersect:false },
+      scales: {
+        x: { grid:{display:false} },
+        y: { beginAtZero:true,
+             title:{ display:true, text:'mean per 1,000 words' },
+             grid:{ color:'rgba(26,20,16,0.06)' } }
+      },
+      plugins: {
+        legend: { position:'bottom', labels:{ boxWidth:12, padding:14 } },
+        tooltip: { callbacks:{ label: c => ` ${c.dataset.label}: ${c.parsed.y}/1k (avg)` } }
+      }
+    }
   });
 
-  let yearChart = new Chart(document.getElementById('yearChart').getContext('2d'), {
-    type: 'bar',
-    data: { labels: CLUSTERS.map(c => c.label.split(' / ')[0]), datasets: [{ label:'1937', data: DATA['1937'], backgroundColor: CLUSTERS.map(c=>c.color+'cc') }] },
-    options: { plugins: { legend: {display:false} } }
+  // ── Fig 6: Degenerate trajectory all three ────────────────────
+  new Chart(document.getElementById('degenerateChart').getContext('2d'), {
+    type: 'line',
+    data: {
+      datasets: Object.entries(SPEAKERS).map(([name, sp]) => ({
+        label: name,
+        data: sp.years.map(y => ({ x: y, y: sp.data[y][2] })),
+        borderColor: sp.color,
+        backgroundColor: sp.color + '14',
+        fill: name !== 'Speer',
+        borderWidth: name === 'Speer' ? 1.5 : 2.5,
+        borderDash: name === 'Speer' ? [5,3] : [],
+        pointRadius: 5, tension: 0.3
+      }))
+    },
+    options: {
+      responsive: true,
+      interaction: { mode:'index', intersect:false },
+      scales: {
+        x: { type:'linear', grid:{display:false},
+             ticks:{ stepSize:2 }, title:{ display:true, text:'Year' } },
+        y: { beginAtZero:true,
+             title:{ display:true, text:'"Degenerate" cluster per 1,000 words' },
+             grid:{ color:'rgba(26,20,16,0.06)' } }
+      },
+      plugins: {
+        legend: { position:'bottom', labels:{ boxWidth:12, padding:14 } }
+      }
+    }
   });
 
-  const ysEl = document.getElementById('yearSelector');
-  YEARS.forEach(y => {
-    const b = document.createElement('button'); b.className = 'yr-btn' + (y==='1937'?' active':''); b.innerText = y;
+  // ── Fig 7: Interactive detail bar ─────────────────────────────
+  let activeSpeaker = 'Hitler';
+  let activeYear    = 1937;
+  let detailChart;
+  const detailCtxEl = document.getElementById('detailContext');
+
+  function buildDetailBar() {
+    if (detailChart) detailChart.destroy();
+    const sp   = SPEAKERS[activeSpeaker];
+    const vals = sp.data[activeYear];
+    if (!vals) return;
+    detailChart = new Chart(document.getElementById('detailBarChart').getContext('2d'), {
+      type: 'bar',
+      data: {
+        labels: CLUSTER_SHORT,
+        datasets: [{
+          label: `${activeSpeaker} · ${activeYear}`,
+          data: vals,
+          backgroundColor: CLUSTER_COLORS.map(c => c + 'bb'),
+          borderColor: CLUSTER_COLORS,
+          borderWidth: 1.5
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          x: { grid:{display:false} },
+          y: { beginAtZero:true,
+               title:{ display:true, text:'per 1,000 words' },
+               grid:{ color:'rgba(26,20,16,0.06)' } }
+        },
+        plugins: { legend:{ display:false } }
+      }
+    });
+    detailCtxEl.textContent = sp.labels[activeYear] || '';
+  }
+
+  // Speaker buttons
+  const speakerToggleEl = document.getElementById('speakerToggle');
+  Object.entries(SPEAKERS).forEach(([name, sp]) => {
+    const b = document.createElement('button');
+    b.className = 'yt-btn' + (name === 'Hitler' ? ' active' : '');
+    b.style.borderLeftColor = sp.color;
+    b.textContent = name;
     b.onclick = () => {
-      document.querySelectorAll('.yr-btn').forEach(x => x.classList.remove('active')); b.classList.add('active');
-      yearChart.data.datasets[0].label = y; yearChart.data.datasets[0].data = DATA[y]; yearChart.update();
-      document.getElementById('yearContext').innerText = `"${SPEECHES[y].title}" — ${SPEECHES[y].context}`;
+      document.querySelectorAll('#speakerToggle .yt-btn').forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      activeSpeaker = name;
+      // Rebuild year buttons for new speaker
+      buildYearButtons();
+      buildDetailBar();
     };
-    ysEl.appendChild(b);
-  });
-  document.getElementById('yearContext').innerText = `"${SPEECHES['1937'].title}" — ${SPEECHES['1937'].context}`;
-
-  new Chart(document.getElementById('exclusionChart').getContext('2d'), {
-    type: 'bar',
-    data: { labels: YEARS, datasets: [{ label: 'Degenerate / Foreign / Chaos', data: YEARS.map(y => DATA[y][2]), backgroundColor: YEARS.map(y => y==='1937'||y==='1943'?'#8b1a1acc':'#8b1a1a55') }] },
-    options: { plugins: { legend: {display:false} } }
+    speakerToggleEl.appendChild(b);
   });
 
-  // Init Probe Buttons
-  const probeContainer = document.getElementById('probeButtons');
-  const probeResult = document.getElementById('probeResult');
-  Object.entries(PROBE_INFO).forEach(([label, info], i) => {
-    const b = document.createElement('button'); b.className = 'probe-btn'; b.innerText = label.split(' / ')[0]; b.style.borderLeftColor = CLUSTERS[i].color;
-    b.onclick = () => {
-      document.querySelectorAll('.probe-btn').forEach(x => x.classList.remove('active')); b.classList.add('active');
-      probeResult.innerHTML = `<strong style="color:var(--ink);">${label}</strong><br><span style="color:var(--ink3); font-size:12px;">Keywords: ${info.keywords.join(', ')}</span><br><br>${info.insight}`;
-    };
-    probeContainer.appendChild(b);
-  });
+  // Year buttons (dynamic per speaker)
+  const yearToggleEl = document.getElementById('yearToggle');
+  function buildYearButtons() {
+    yearToggleEl.innerHTML = '';
+    const sp = SPEAKERS[activeSpeaker];
+    // pick closest available year
+    if (!sp.years.includes(activeYear)) activeYear = sp.years[0];
+    sp.years.forEach(y => {
+      const b = document.createElement('button');
+      b.className = 'yt-btn' + (y === activeYear ? ' active' : '');
+      b.textContent = y;
+      b.onclick = () => {
+        document.querySelectorAll('#yearToggle .yt-btn').forEach(x => x.classList.remove('active'));
+        b.classList.add('active');
+        activeYear = y;
+        buildDetailBar();
+      };
+      yearToggleEl.appendChild(b);
+    });
+  }
+
+  buildYearButtons();
+  buildDetailBar();
 }
 
-const observer = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.1 });
+/* ══════════════════════════════════════════════
+   SCROLL REVEAL
+══════════════════════════════════════════════ */
+const revealObserver = new IntersectionObserver(
+  entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+  { threshold: 0.08 }
+);
 window.onload = () => renderQuizStage(0);
 </script>
-
 </body>
 </html>
