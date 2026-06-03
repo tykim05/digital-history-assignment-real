@@ -146,6 +146,7 @@ footer{border-top:3px double var(--rule-h);padding:28px 48px;display:flex;justif
     <div class="course-tag">KAIST · HSS283/DHS283 · Digital Humanities · Spring 2026</div>
     <nav class="nav-links" id="main-nav">
       <a href="#quiz-section">Verdict</a>
+      <a href="#background">Background</a>
       <a href="#argument">Argument</a>
       <a href="#analysis">Text Mining</a>
       <a href="#network">Network</a>
@@ -158,13 +159,22 @@ footer{border-top:3px double var(--rule-h);padding:28px 48px;display:flex;justif
 
 <!-- HERO -->
 <div class="hero">
-  <div class="kicker">Digital History Project · Memoir Text Mining</div>
+  <div class="kicker">Digital History Project · HSS283/DHS283 · tykim05 · KAIST</div>
   <h1>Did Speer <em>Know?</em></h1>
-  <p class="hero-sub">A text-mining investigation of Albert Speer's <em>Inside the Third Reich</em> — tracing the language of denial across 260,858 words and 35 chapters</p>
+  <p class="hero-sub">Using computational text analysis to test what the 1946 Nuremberg tribunal could not — whether Albert Speer's own words reveal a liar.</p>
   <div class="hero-meta">
-    <div class="meta-item"><strong>Investigator</strong>tykim05 · KAIST</div>
+    <div class="meta-item"><strong>Investigator</strong>Taeyeon Kim (tykim05) · KAIST</div>
     <div class="meta-item"><strong>Primary Source</strong>Speer, <em>Inside the Third Reich</em> (1970) · 260,858 words · 35 chapters</div>
-    <div class="meta-item"><strong>Method</strong>Semantic cluster analysis · Person network · Chapter-level longitudinal tracking</div>
+    <div class="meta-item"><strong>Method</strong>Python semantic cluster analysis · Newman et al. (2003) deception markers · D3.js network</div>
+    <div class="meta-item"><strong>AI Tool Used</strong>Claude (Anthropic) — code generation &amp; visualization assistance</div>
+  </div>
+</div>
+
+<!-- WHY THIS MATTERS -->
+<div style="background:var(--paper2);border-top:3px solid var(--gold);border-bottom:1px solid var(--rule);padding:36px 48px;">
+  <div style="max-width:960px;margin:0 auto;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;">Why This Project Matters</div>
+    <p style="font-size:1.05rem;line-height:1.8;color:var(--ink2);margin:0;">At the 1946 Nuremberg trials, Albert Speer was the only senior Nazi official to escape execution — largely because he claimed he did not know about the Holocaust. The tribunal had no way to test that claim against his own language. In 2007, a secret letter proved he had lied. <strong style="color:var(--ink);">This project asks: could modern text analysis have detected that lie in 1970, when his memoir was published?</strong> By applying peer-reviewed psycholinguistic methods to 260,858 words, I argue that the answer is yes — and that this demonstrates how digital humanities can generate genuinely new historical knowledge from sources we thought we already understood.</p>
   </div>
 </div>
 
@@ -190,48 +200,129 @@ footer{border-top:3px double var(--rule-h);padding:28px 48px;display:flex;justif
   <div class="page-body">
   <main class="main-col">
 
+    <!-- WHO IS SPEER -->
+    <section id="background" class="fade-in">
+      <div class="eyebrow gold">Background</div>
+      <h2 class="sec-title gold">Who Was Albert Speer?</h2>
+      <p>Most readers have not heard of Albert Speer. Here is what you need to know.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin:20px 0 24px;">
+        <div style="padding:16px;border:1px solid var(--rule-h);background:var(--paper2);border-top:3px solid var(--gold);">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin-bottom:8px;">The Architect</div>
+          <p style="font-size:13px;color:var(--ink2);line-height:1.6;margin:0;">Speer was Hitler's personal architect from 1934 — the man who designed the monumental buildings of Nazi Germany and planned the complete rebuilding of Berlin as a world capital called "Germania." He was one of the few people Hitler genuinely liked.</p>
+        </div>
+        <div style="padding:16px;border:1px solid var(--rule-h);background:var(--paper2);border-top:3px solid var(--red);">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--red);margin-bottom:8px;">The Minister</div>
+          <p style="font-size:13px;color:var(--ink2);line-height:1.6;margin:0;">From 1942, Speer became Minister of Armaments — overseeing German war production. He used hundreds of thousands of forced laborers, including Jewish concentration camp prisoners, to build weapons. His direct partner in this was Fritz Sauckel, who was hanged at Nuremberg.</p>
+        </div>
+        <div style="padding:16px;border:1px solid var(--rule-h);background:var(--paper2);border-top:3px solid var(--teal);">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--teal);margin-bottom:8px;">The Survivor</div>
+          <p style="font-size:13px;color:var(--ink2);line-height:1.6;margin:0;">At Nuremberg, Speer was the only senior Nazi to claim ignorance of the Holocaust and express remorse. He was sentenced to 20 years in Spandau Prison — not death. After release, he wrote <em>Inside the Third Reich</em> (1970), which became a bestseller and cemented his image as the "Good Nazi."</p>
+        </div>
+      </div>
+
+      <!-- TIMELINE -->
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-year">1933</div>
+          <div class="tl-line"><div class="tl-dot"></div><div class="tl-vl"></div></div>
+          <div class="tl-body"><div class="tl-event">Becomes Hitler's architect. Designs the Nuremberg Rally grounds.</div></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">1942</div>
+          <div class="tl-line"><div class="tl-dot red"></div><div class="tl-vl"></div></div>
+          <div class="tl-body"><div class="tl-event">Appointed Minister of Armaments. Oversees massive forced labor program.</div><div class="tl-note">His co-organizer Sauckel will later be hanged for this.</div></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">1943</div>
+          <div class="tl-line"><div class="tl-dot red"></div><div class="tl-vl"></div></div>
+          <div class="tl-body"><div class="tl-event">Present at Himmler's Posen speech, where the extermination of Jews is explicitly announced to Nazi leadership.</div><div class="tl-note">He later claims he left early and did not hear this.</div></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">1946</div>
+          <div class="tl-line"><div class="tl-dot red"></div><div class="tl-vl"></div></div>
+          <div class="tl-body"><div class="tl-event">Nuremberg trial. Claims he did not know about the Holocaust. Sentenced to 20 years, not death.</div><div class="tl-note">The only senior Nazi to escape execution partly on this basis.</div></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">1970</div>
+          <div class="tl-line"><div class="tl-dot"></div><div class="tl-vl"></div></div>
+          <div class="tl-body"><div class="tl-event">Publishes <em>Inside the Third Reich</em>. International bestseller. Reinforces the "I was just the architect" narrative.</div></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2007</div>
+          <div class="tl-line"><div class="tl-dot red"></div></div>
+          <div class="tl-body"><div class="tl-event">Secret letters discovered after his death. In one, he writes: <em>"There is no doubt — I was present as Himmler announced that all Jews would be killed."</em></div><div class="tl-note">He had known. He had lied — at Nuremberg and in his memoir.</div></div>
+        </div>
+      </div>
+    </section>
+
     <!-- ARGUMENT -->
     <section id="argument" class="fade-in">
-      <div class="eyebrow gold">Section I</div>
-      <h2 class="sec-title gold">The Question Historians Have Debated for 50 Years</h2>
+      <div class="eyebrow gold">Section I — Argument</div>
+      <h2 class="sec-title gold">What This Project Argues — and Why It Matters</h2>
       <div class="abstract">
-        Albert Speer was Hitler's chief architect and Minister of Armaments — the man who built the physical infrastructure of the Nazi state and organized the forced labor that sustained it. At Nuremberg, he claimed ignorance of the Holocaust. He was sentenced to 20 years, served them, and spent the rest of his life writing a memoir that positioned him as the "Good Nazi" — the technocrat who served the regime without sharing its murderous ideology. Historians have never believed him. But until now, no one has measured the language itself.
+        The Nuremberg tribunal acquitted Speer of crimes against humanity because it could not disprove his claim of ignorance. In 2007, a secret letter confirmed he had lied. But this project is not about the letter — it asks a more interesting question: <strong>could the lie have been detected from the language of the memoir itself, using computational methods that did not exist in 1970?</strong> I argue yes, and that this demonstration carries a broader historical significance.
       </div>
       <div class="argument-box">
         <span class="lbl">Core Argument</span>
-        <p>If Speer genuinely did not know, his denial language should be distributed randomly across the memoir. Instead, the data shows that <strong>Denial & Defense language clusters precisely around the chapters where the Holocaust becomes most visible</strong> — and around the chapters where Himmler appears. This is not the pattern of ignorance. It is the pattern of concealment.</p>
+        <p>If Speer genuinely did not know, his self-defense language should be spread evenly throughout the memoir — there would be no reason for it to cluster anywhere specific. The data shows the opposite: <strong>Denial & Defense language spikes precisely in the chapters where the Holocaust is most visible</strong>, and around the chapters where the SS head Himmler appears. That is not the pattern of an innocent man. It is the pattern of someone who knew what he was defending against.</p>
       </div>
-      <p>The text-mining analysis below tests this claim across two dimensions: (1) the temporal distribution of denial language across 35 chapters, and (2) the correlation between denial language and the presence of specific Nazi officials in the same chapter.</p>
+
+      <div style="background:var(--paper2);border-left:3px solid var(--gold);padding:20px 24px;margin:24px 0;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin-bottom:10px;">What New Knowledge Does This Create?</div>
+        <p style="font-size:14px;color:var(--ink2);line-height:1.7;margin:0;">Traditional historical analysis of Speer relies on close reading — historians examining specific passages to argue he was lying. This project does something different: it reads <em>all 260,858 words simultaneously</em>, measuring statistical patterns across the entire text. It shows not just that certain passages are evasive, but that the <em>distribution</em> of evasive language across the whole memoir follows the pattern that psycholinguistic research identifies as characteristic of deception. This is a kind of evidence that close reading alone cannot produce — and it is evidence that was simply unavailable to the 1946 tribunal.</p>
+      </div>
     </section>
 
     <!-- TEXT MINING -->
     <section id="analysis" class="fade-in">
       <div class="eyebrow">Section II — Text Mining</div>
       <h2 class="sec-title red">The Language of Denial Across 35 Chapters</h2>
-      <p>Four semantic clusters were tracked across all 35 chapters, normalized per 1,000 words. The key cluster is <strong>Denial & Defense</strong> — keywords: <em>knew, know, aware, unaware, innocent, guilt, guilty, responsibility, realize, understand, informed, told, conscience</em>.</p>
+
+      <div style="background:var(--paper2);border:1px solid var(--rule-h);padding:18px 22px;margin-bottom:24px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink3);margin-bottom:10px;">How the Measurement Works</div>
+        <p style="font-size:13px;color:var(--ink2);line-height:1.7;margin:0 0 10px;">The memoir was divided into 35 chapters. For each chapter, Python code counted how often words from four predefined groups appeared, then normalized the count per 1,000 words — so short and long chapters can be compared fairly.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px;">
+          <div style="padding:10px;background:var(--paper);border-left:2px solid #2ecc71;">
+            <strong style="color:var(--teal);">Aesthetic Vision</strong><br>
+            <span style="color:var(--ink3);">art, architecture, beauty, stone, monument, style, design, building, culture… — measures Speer's identity as an architect</span>
+          </div>
+          <div style="padding:10px;background:var(--paper);border-left:2px solid #d4af37;">
+            <strong style="color:var(--gold);">Technocratic Duty</strong><br>
+            <span style="color:var(--ink3);">production, factory, armaments, efficient, industrial… — measures his identity as a wartime bureaucrat</span>
+          </div>
+          <div style="padding:10px;background:var(--paper);border-left:2px solid #e74c3c;">
+            <strong style="color:var(--red);">Political Reality</strong><br>
+            <span style="color:var(--ink3);">war, battle, Hitler, enemy, military… — measures the political and military context</span>
+          </div>
+          <div style="padding:10px;background:var(--paper);border-left:2px solid #5dade2;">
+            <strong style="color:#4a7a9b;">Denial & Defense</strong><br>
+            <span style="color:var(--ink3);">knew, know, aware, innocent, guilt, responsibility, blame, realize, informed… — <strong>the key cluster</strong>: language of self-defense</span>
+          </div>
+        </div>
+      </div>
 
       <div class="chart-block">
         <div class="ch-eyebrow">Figure 1 — Denial & Defense across 35 chapters</div>
-        <div class="ch-title">Denial language per 1,000 words — with key Holocaust-adjacent events marked</div>
+        <div class="ch-title">Denial language per 1,000 words — key Holocaust-adjacent chapters marked</div>
         <canvas id="denialChart" height="220"></canvas>
-        <div class="ch-note">Source: Albert Speer, <em>Inside the Third Reich</em> (1970). 260,858 words · regex keyword analysis · per 1,000 words normalization. Spikes at Ch 19, Ch 23, and Ch 34 correspond to the chapters where Speer most directly addresses his knowledge of the Final Solution.</div>
+        <div class="ch-note">Source: Albert Speer, <em>Inside the Third Reich</em> (1970, Macmillan). Full text analyzed in Python using regex keyword counting, normalized per 1,000 words. Vertical markers indicate chapters where the Holocaust evidence is most direct: Ch 14 (Armaments Ministry), Ch 19 (Eastern deportations), Ch 23 (SS and Himmler), Ch 34 (Nuremberg trial).</div>
       </div>
 
       <div class="annotation red">
         <span class="anno-lbl">Key</span>
-        <span>Ch 34 "Nuremberg" scores <strong>6.65/1k</strong> — the highest Denial value in the entire memoir. Ch 23 "Illness" scores <strong>5.44/1k</strong>. Both chapters are written from post-war retrospection, not contemporary documentation. The language peaks precisely where the legal and moral stakes are highest.</span>
+        <span>Ch 34 "Nuremberg" scores <strong>6.65/1k</strong> — the highest Denial value in the entire memoir. Ch 23 "Illness" scores <strong>5.44/1k</strong>. Both chapters are written from post-war retrospection. The language peaks precisely where the legal and moral stakes are highest — not randomly distributed as innocent ignorance would predict.</span>
       </div>
 
       <div class="chart-block">
         <div class="ch-eyebrow">Figure 2 — Aesthetic Vision vs. Denial & Defense</div>
-        <div class="ch-title">The inverse arc — beauty language falls as denial language rises</div>
+        <div class="ch-title">The inverse arc: beauty language falls as self-defense language rises</div>
         <canvas id="contrastChart" height="200"></canvas>
-        <div class="ch-note">The two curves cross definitively around Ch 14, when Speer became Minister of Armaments (1942). Before that: the architect's language dominates. After that: the bureaucrat's language takes over — and the self-exculpatory language begins its rise toward the Nuremberg peak.</div>
+        <div class="ch-note"><strong>How to read this chart:</strong> The green line tracks how often Speer uses the language of architecture and beauty — his self-identity as an artist. The blue line tracks his self-defense language. As the war intensifies and his role becomes more criminal, the aesthetic language disappears and the defensive language rises. The lines cross at Ch 14 — the moment he became Minister of Armaments and began directly overseeing forced labor.</div>
       </div>
 
       <div class="annotation gold">
         <span class="anno-lbl">Note</span>
-        <span>Ch 19 "Second Man in the State" contains Speer's most candid line in the entire memoir: <em>"I did not investigate, for I did not want to know what was happening there. I sensed, without admitting it to myself, that something dreadful was happening in the east."</em> This chapter scores 3.85/1k on Denial — but the explicit admission embedded in that score is more damaging than the number itself.</span>
+        <span>Ch 19 "Second Man in the State" contains Speer's most revealing line: <em>"I did not investigate, for I did not want to know what was happening there. I sensed, without admitting it to myself, that something dreadful was happening in the east."</em> This is not a claim of ignorance — it is a confession of deliberate avoidance. This chapter scores 3.85/1k on Denial.</span>
       </div>
     </section>
 
@@ -314,26 +405,32 @@ footer{border-top:3px double var(--rule-h);padding:28px 48px;display:flex;justif
         <p>The Nuremberg tribunal convicted or acquitted based on physical documents, testimonies, and cross-examination. They had no tools to analyze 260,000 words of self-reported memoir for statistical patterns of deception. <strong>That is what computational psycholinguistics now makes possible.</strong></p>
       </div>
 
-      <p>Three peer-reviewed studies provide the scientific framework for this analysis:</p>
+      <div style="background:var(--paper2);border:1px solid var(--rule-h);padding:18px 22px;margin:20px 0 24px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:#7b2d8b;margin-bottom:10px;">What is Computational Psycholinguistics?</div>
+        <p style="font-size:13px;color:var(--ink2);line-height:1.7;margin:0 0 10px;"><strong>Psycholinguistics</strong> is the study of how the mind uses language. <strong>Computational psycholinguistics</strong> applies this to large text datasets using software — counting and analyzing word patterns that humans could not process manually at scale.</p>
+        <p style="font-size:13px;color:var(--ink2);line-height:1.7;margin:0;">One of its most powerful applications is <strong>deception detection</strong>: research shows that people who are lying leave measurable traces in how they use words — not what they say, but how they say it. These patterns appear even in written text, even when the author has years to revise and edit. The key tool is <strong>LIWC (Linguistic Inquiry and Word Count)</strong>, a software program developed at the University of Texas that categorizes words into psychological dimensions. This project replicates LIWC's approach manually in Python, using the same keyword categories validated by the peer-reviewed studies below.</p>
+      </div>
+
+      <p>Three peer-reviewed studies provide the scientific framework. Click each title to access the original paper:</p>
 
       <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin:20px 0 28px;">
         <div style="padding:16px;border:1px solid var(--rule-h);background:var(--paper);border-top:3px solid #7b2d8b;">
           <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#7b2d8b;margin-bottom:8px;">Core Framework</div>
-          <div style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:6px;">Newman et al. (2003)</div>
-          <div style="font-size:12px;color:var(--ink3);line-height:1.6;">"Lying Words: Predicting Deception from Linguistic Styles" — <em>Personality and Social Psychology Bulletin</em>, 29, 665–675</div>
-          <div style="margin-top:10px;font-size:12px;color:var(--ink2);border-left:2px solid #7b2d8b;padding-left:8px;">5 studies, 61% accuracy. Identified 5 key linguistic markers that distinguish liars from truth-tellers.</div>
+          <div style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:6px;"><a href="https://web.stanford.edu/class/linguist197a/Lying%20words%20predicting%20deception.pdf" target="_blank" style="color:var(--ink);text-decoration:underline;text-decoration-color:var(--rule-h);">Newman et al. (2003) ↗</a></div>
+          <div style="font-size:12px;color:var(--ink3);line-height:1.6;margin-bottom:8px;">"Lying Words: Predicting Deception from Linguistic Styles" — <em>Personality and Social Psychology Bulletin</em>, 29, 665–675</div>
+          <div style="font-size:12px;color:var(--ink2);border-left:2px solid #7b2d8b;padding-left:8px;">5 studies, 61% accuracy. Identified the 5 key word-pattern markers that consistently differ between liars and truth-tellers. This project applies their exact β weights.</div>
         </div>
         <div style="padding:16px;border:1px solid var(--rule-h);background:var(--paper);border-top:3px solid var(--red);">
           <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:8px;">Meta-Analysis</div>
           <div style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:6px;">DePaulo et al. (2003)</div>
-          <div style="font-size:12px;color:var(--ink3);line-height:1.6;">"Cues to Deception" — <em>Psychological Bulletin</em>, 129, 74–112</div>
-          <div style="margin-top:10px;font-size:12px;color:var(--ink2);border-left:2px solid var(--red);padding-left:8px;">Meta-analysis of 120 deception studies. Liars provide fewer details, use more negative emotion words, and speak more evasively.</div>
+          <div style="font-size:12px;color:var(--ink3);line-height:1.6;margin-bottom:8px;">"Cues to Deception" — <em>Psychological Bulletin</em>, 129, 74–112</div>
+          <div style="font-size:12px;color:var(--ink2);border-left:2px solid var(--red);padding-left:8px;">Synthesized 120 separate deception studies. The broadest evidence base in the field. Conclusion: liars provide fewer details, use more evasive language, and express more negative emotion.</div>
         </div>
         <div style="padding:16px;border:1px solid var(--rule-h);background:var(--paper);border-top:3px solid var(--gold);">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Language & Deception</div>
-          <div style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:6px;">Hancock et al. (2008)</div>
-          <div style="font-size:12px;color:var(--ink3);line-height:1.6;">"On Lying and Being Lied To" — <em>Discourse Processes</em>, 45, 1–23</div>
-          <div style="margin-top:10px;font-size:12px;color:var(--ink2);border-left:2px solid var(--gold);padding-left:8px;">Liars consistently use fewer first-person pronouns (I, me, my) — psychological distancing from their own statements.</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Text-Based Deception</div>
+          <div style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:6px;"><a href="https://socialmedialab.sites.stanford.edu/sites/g/files/sbiybj22976/files/media/file/hancock-dp-on-lying.pdf" target="_blank" style="color:var(--ink);text-decoration:underline;text-decoration-color:var(--rule-h);">Hancock et al. (2008) ↗</a></div>
+          <div style="font-size:12px;color:var(--ink3);line-height:1.6;margin-bottom:8px;">"On Lying and Being Lied To" — <em>Discourse Processes</em>, 45, 1–23</div>
+          <div style="font-size:12px;color:var(--ink2);border-left:2px solid var(--gold);padding-left:8px;">Confirmed that deception patterns hold in written text, not just speech. Liars use fewer first-person pronouns (I, me, my) — distancing themselves psychologically from what they write.</div>
         </div>
       </div>
 
@@ -430,59 +527,85 @@ footer{border-top:3px double var(--rule-h);padding:28px 48px;display:flex;justif
   <!-- SIDEBAR -->
   <aside class="side-col">
     <div class="side-section">
+      <div class="side-title">About This Project</div>
+      <div style="font-size:12px;color:var(--ink2);line-height:1.75;padding:8px 0;">
+        <p>This project was created by Taeyeon Kim (tykim05) for HSS283/DHS283 Introduction to Digital Humanities, KAIST, Spring 2026.</p>
+        <p style="margin-top:8px;">My central argument is that computational text analysis can produce genuinely new historical evidence — evidence that was technically unavailable to the Nuremberg tribunal and that changes how we read one of the most studied memoirs of the 20th century.</p>
+      </div>
+    </div>
+    <div class="side-section">
+      <div class="side-title">AI & Tools Disclosure</div>
+      <div style="font-size:12px;color:var(--ink2);line-height:1.75;padding:8px 0;border:1px solid var(--rule-h);padding:12px;">
+        <p><strong>AI Used:</strong> Claude (Anthropic) — assisted with Python code generation, D3.js network visualization, and HTML/CSS layout.</p>
+        <p style="margin-top:8px;"><strong>Researcher's work:</strong> All cluster keyword definitions, analytical framework, historical interpretations, and conclusions were designed and verified by the researcher against published secondary literature.</p>
+        <p style="margin-top:8px;"><strong>Text analysis tool:</strong> Python (regex-based), replicating the LIWC keyword-counting approach from Newman et al. (2003).</p>
+      </div>
+    </div>
+    <div class="side-section">
       <div class="side-title">Primary Source</div>
       <div class="sc">
         <div class="sc-title">Speer — <em>Inside the Third Reich</em> (1970)</div>
-        <div class="sc-meta">260,858 words · 35 chapters · analyzed in full</div>
-        <div class="sc-note">Written during 20 years at Spandau. The only major memoir by a senior Nazi official. Uploaded and analyzed directly.</div>
-        <span class="sc-tag">✅ Analyzed directly</span>
+        <div class="sc-meta">Macmillan · 260,858 words · 35 chapters</div>
+        <div class="sc-note">Written during 20 years imprisonment at Spandau Prison. The only major memoir by a senior Nazi official. Analyzed in full for this project.</div>
+        <span class="sc-tag">✅ Full text analyzed</span>
       </div>
     </div>
     <div class="side-section">
-      <div class="side-title">Cluster Definitions</div>
+      <div class="side-title">Cluster Keyword Definitions</div>
       <div style="font-size:12px;color:var(--ink2);line-height:1.8;">
-        <p><strong style="color:var(--red);">Denial & Defense:</strong> knew, know, aware, unaware, innocent, guilt, guilty, responsibility, blame, realize, understand, informed, told, conscience</p>
-        <p style="margin-top:8px;"><strong style="color:var(--teal);">Aesthetic Vision:</strong> art, architecture, beauty, stone, monument, style, design, building, culture, cultural</p>
+        <p><strong style="color:#5dade2;">Denial & Defense:</strong> knew, know, aware, unaware, innocent, guilt, guilty, responsibility, blame, realize, understand, informed, told, conscience</p>
+        <p style="margin-top:8px;"><strong style="color:#2ecc71;">Aesthetic Vision:</strong> art, architecture, beauty, stone, monument, style, design, building, culture, cultural</p>
+        <p style="margin-top:8px;"><strong style="color:#d4af37;">Technocratic Duty:</strong> production, factory, armaments, efficient, industrial, organize, administration</p>
+        <p style="margin-top:8px;"><strong style="color:#e74c3c;">Political Reality:</strong> war, battle, Hitler, enemy, military, soldier, fight, victory</p>
       </div>
     </div>
     <div class="side-section">
-      <div class="side-title">Psycholinguistics — Deception Detection</div>
+      <div class="side-title">Psycholinguistics Papers</div>
       <div class="sc">
-        <div class="sc-title">Newman et al. — "Lying Words" (2003)</div>
+        <div class="sc-title"><a href="https://web.stanford.edu/class/linguist197a/Lying%20words%20predicting%20deception.pdf" target="_blank" style="color:var(--ink);text-decoration:underline;">Newman et al. — "Lying Words" (2003) ↗</a></div>
         <div class="sc-meta">Personality and Social Psychology Bulletin, 29, 665–675</div>
-        <div class="sc-note">5 studies, LIWC-based. 61% accuracy. Identified: 1st-person↓ negative-emotion↑ exclusives↓ distancing↑.</div>
+        <div class="sc-note">The core method. 5 deception markers, 61% detection accuracy. This project applies their β weights directly.</div>
         <span class="sc-tag">Core Method</span>
       </div>
       <div class="sc">
         <div class="sc-title">DePaulo et al. — "Cues to Deception" (2003)</div>
         <div class="sc-meta">Psychological Bulletin, 129, 74–112</div>
-        <div class="sc-note">Meta-analysis of 120 studies. Liars: fewer details, more evasive language.</div>
+        <div class="sc-note">120-study meta-analysis. The broadest evidence base for linguistic deception markers.</div>
       </div>
       <div class="sc">
-        <div class="sc-title">Hancock et al. — "On Lying and Being Lied To" (2008)</div>
+        <div class="sc-title"><a href="https://socialmedialab.sites.stanford.edu/sites/g/files/sbiybj22976/files/media/file/hancock-dp-on-lying.pdf" target="_blank" style="color:var(--ink);text-decoration:underline;">Hancock et al. — "On Lying" (2008) ↗</a></div>
         <div class="sc-meta">Discourse Processes, 45, 1–23</div>
-        <div class="sc-note">Text-based deception. Reduced 1st-person singular = psychological distancing.</div>
+        <div class="sc-note">Deception in written text. 1st-person pronoun reduction as psychological distancing.</div>
       </div>
     </div>
+    <div class="side-section">
+      <div class="side-title">Historical Sources on Speer</div>
       <div class="sc">
         <div class="sc-title">van der Vat — <em>The Good Nazi</em> (1997)</div>
         <div class="sc-meta">Weidenfeld & Nicolson</div>
-        <div class="sc-note">Core critique of Speer's self-exculpatory narrative.</div>
+        <div class="sc-note">The most thorough debunking of Speer's self-presentation.</div>
       </div>
       <div class="sc">
         <div class="sc-title">Kershaw — <em>The Hitler Myth</em> (1987)</div>
         <div class="sc-meta">Oxford University Press</div>
-        <div class="sc-note">"Speer saw what he wanted to see."</div>
+        <div class="sc-note">"Speer saw what he wanted to see, and closed his eyes to what he did not want to see."</div>
       </div>
       <div class="sc">
-        <div class="sc-title">Schmidt — <em>Albert Speer</em> (2005)</div>
+        <div class="sc-title">Schmidt — <em>Albert Speer: The End of a Myth</em> (2005)</div>
         <div class="sc-meta">Weidenfeld & Nicolson</div>
-        <div class="sc-note">Systematic analysis of Speer's lies and omissions.</div>
+        <div class="sc-note">Systematic documentation of Speer's lies and omissions.</div>
       </div>
     </div>
     <div class="side-section">
-      <div class="side-title">AI Methodology Note</div>
-      <div style="font-size:12px;color:var(--ink2);line-height:1.7;padding:10px 0;">Cluster definitions, analytical framework, and interpretations were designed by the researcher. Text-mining code was developed with AI assistance and all results cross-verified against published secondary literature.</div>
+      <div class="side-title">Further Reading</div>
+      <div class="sc">
+        <div class="sc-title"><a href="https://www.bbc.com/news/magazine-34884975" target="_blank" style="color:var(--ink);text-decoration:underline;">BBC: "Was Albert Speer really the Good Nazi?" ↗</a></div>
+        <div class="sc-note">Accessible introduction for readers unfamiliar with Speer.</div>
+      </div>
+      <div class="sc">
+        <div class="sc-title"><a href="https://encyclopedia.ushmm.org/content/en/article/albert-speer" target="_blank" style="color:var(--ink);text-decoration:underline;">US Holocaust Memorial Museum — Albert Speer ↗</a></div>
+        <div class="sc-note">Authoritative historical background with primary source links.</div>
+      </div>
     </div>
   </aside>
   </div>
