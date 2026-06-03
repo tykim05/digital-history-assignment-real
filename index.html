@@ -272,6 +272,19 @@ footer{border-top:3px double var(--rule-h);padding:28px 48px;display:flex;justif
       </div>
     </section>
 
+    <!-- RESEARCHER'S NOTE -->
+    <section class="fade-in">
+      <div class="eyebrow gold">Researcher's Note</div>
+      <h2 class="sec-title gold">Why I Made This</h2>
+      <div style="background:var(--paper2);border:1px solid var(--rule-h);border-left:4px solid var(--gold);padding:26px 28px;font-size:1rem;line-height:1.85;color:var(--ink2);">
+        <p>I chose Albert Speer almost by accident. I was originally interested in how Nazi ideology shaped art and architecture — the buildings, the exhibitions, the visual language of exclusion. But Speer kept appearing at the center of every thread I pulled. He designed the buildings. He organized the labor. And yet, at Nuremberg, he walked away.</p>
+        <p>What bothered me was not that he lied — plenty of people lied at Nuremberg. What bothered me was that it <em>worked</em>. For decades, his memoir convinced millions of readers that a person could stand at the very top of a criminal regime, build its monuments, run its forced labor program, and somehow remain morally untouched. The "Good Nazi" narrative felt like one of history's most successful acts of self-presentation — and I wanted to understand how it was constructed.</p>
+        <p>I am not a historian, and this is not a historical proof. What I can do, as someone learning digital methods, is ask whether the language of the memoir itself carries traces of what Speer was trying to hide. The psycholinguistic research says that liars leave patterns they cannot consciously control. I wanted to see if those patterns were there.</p>
+        <p style="margin:0;">They were. In 1970, when the memoir was published, no one could have run this analysis. In 2026, I could. That felt worth doing.</p>
+      </div>
+      <div style="margin-top:12px;font-size:12px;color:var(--ink3);font-style:italic;text-align:right;">— Taeyeon Kim (tykim05), KAIST HSS283/DHS283, Spring 2026</div>
+    </section>
+
     <!-- SECTION II: PSYCHOLINGUISTIC DECEPTION ANALYSIS — MAIN -->
     <section id="psycho" class="fade-in">
       <div class="eyebrow" style="color:#7b2d8b;">Section II — The Core Analysis</div>
@@ -545,15 +558,50 @@ footer{border-top:3px double var(--rule-h);padding:28px 48px;display:flex;justif
       </div>
     </section>
 
+    <!-- LIMITATIONS -->
+    <section class="fade-in">
+      <div class="eyebrow gold">Methodological Limitations</div>
+      <h2 class="sec-title gold">What This Analysis Can and Cannot Prove</h2>
+      <p>Honesty about limitations is part of any serious scholarly work. Here is what this project does not claim.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0;">
+        <div style="padding:16px;background:var(--paper2);border:1px solid var(--rule-h);border-left:3px solid var(--red);">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--red);margin-bottom:8px;">What it cannot prove</div>
+          <p style="font-size:13px;color:var(--ink2);line-height:1.65;margin:0;">This analysis cannot prove beyond doubt that Speer knew about the Holocaust. No text-mining method can determine with certainty what was in one man's mind. The 2007 letter does that — this analysis does not.</p>
+        </div>
+        <div style="padding:16px;background:var(--paper2);border:1px solid var(--rule-h);border-left:3px solid var(--teal);">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--teal);margin-bottom:8px;">What it can show</div>
+          <p style="font-size:13px;color:var(--ink2);line-height:1.65;margin:0;">It can show that the language patterns of the memoir are statistically consistent with what peer-reviewed research identifies as deceptive writing — and inconsistent with what we would expect from a genuinely ignorant narrator.</p>
+        </div>
+        <div style="padding:16px;background:var(--paper2);border:1px solid var(--rule-h);border-left:3px solid var(--red);">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--red);margin-bottom:8px;">Methodological gap</div>
+          <p style="font-size:13px;color:var(--ink2);line-height:1.65;margin:0;">Newman et al. (2003) used LIWC software with morphological analysis. This project uses Python regex — a simpler approximation. Some word forms may be missed. The results are directionally valid but not a replication of the original study.</p>
+        </div>
+        <div style="padding:16px;background:var(--paper2);border:1px solid var(--rule-h);border-left:3px solid var(--red);">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--red);margin-bottom:8px;">No comparison group</div>
+          <p style="font-size:13px;color:var(--ink2);line-height:1.65;margin:0;">Ideally, this analysis would compare Speer's memoir against other wartime memoirs — both by convicted and acquitted figures. Without a comparison group, the scores are suggestive rather than conclusive. This is a natural next step for future research.</p>
+        </div>
+      </div>
+      <div class="annotation teal">
+        <span class="anno-lbl">Note</span>
+        <span>Stating limitations openly is not a weakness — it is what separates serious digital humanities work from data journalism. The value of this project is in demonstrating <em>what becomes possible</em> when computational methods meet historical texts, while being honest about where the method ends and interpretation begins.</span>
+      </div>
+    </section>
+
     <!-- CONCLUSION -->
     <section id="conclusion" class="fade-in">
-      <div class="eyebrow gold">Section VI</div>
-      <h2 class="sec-title gold">Conclusion: Speer Lied.</h2>
+      <div class="eyebrow gold">Conclusion</div>
+      <h2 class="sec-title gold">Conclusion: Speer Lied — and Digital Humanities Found It</h2>
       <div class="conclusion-pull">"Not a verdict of guilt — a verdict of language. And language does not lie about lying."</div>
       <p>Albert Speer told the Nuremberg tribunal he did not know about the Holocaust. The tribunal, lacking any tool to test that claim computationally, could not disprove it. He was sentenced to 20 years rather than death. He served them, wrote his memoir, became famous as the "Good Nazi" — the technocrat who served evil without sharing its ideology.</p>
-      <p>This project tests that claim with three decades of peer-reviewed psycholinguistic science. The conclusion is consistent across all frameworks. Newman et al. (2003)'s five-marker formula — the strongest peer-reviewed deception detection model in the literature — yields a Late-chapter score of 70.9/100, with all five markers trending in the direction of deception. DePaulo et al. (2003)'s meta-analysis of 120 studies describes a liar who provides fewer details, uses more evasive language, and shows rising negative emotion: Speer's memoir matches. Hancock et al. (2008)'s finding that liars dissolve "I" into "we" to diffuse responsibility maps exactly onto the chapters where forced labor is discussed.</p>
-      <p>And then there is the 2007 letter. After Speer's death, a private correspondent revealed that he had written: he had been present when Himmler announced the plan to exterminate the Jews. He had known. He had chosen to lie — at Nuremberg, and in every page of his memoir.</p>
-      <p><strong>The psycholinguistic analysis reached the same conclusion without the letter. That is the point. Digital humanities does not replace historical evidence — it finds the evidence already embedded in the words themselves.</strong></p>
+      <p>This project tests that claim with three decades of peer-reviewed psycholinguistic science. The conclusion is consistent across all frameworks. Newman et al. (2003)'s five-marker formula yields a Late-chapter score of 70.9/100, with all five markers trending in the direction of deception. DePaulo et al. (2003)'s meta-analysis describes a liar who provides fewer details and shows rising negative emotion — Speer's memoir matches. Hancock et al. (2008)'s finding that liars dissolve "I" into "we" maps exactly onto the chapters where forced labor is discussed.</p>
+      <p>In 2007, a secret letter confirmed what the language had already shown: Speer had been present when Himmler announced the plan to exterminate the Jews. He had known. He had lied — at Nuremberg, and in every page of his memoir.</p>
+
+      <div style="background:var(--paper2);border-left:4px solid var(--gold);padding:22px 26px;margin:28px 0;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin-bottom:12px;">Why This Matters Beyond Speer</div>
+        <p style="font-size:14px;color:var(--ink2);line-height:1.8;margin:0;">Speer is one case — but the question his memoir raises is universal. How do perpetrators construct narratives of innocence? How do those narratives survive, spread, and shape public memory for decades? These are not questions about one man. They are questions about how history gets written by those who have the most reason to distort it.</p>
+        <p style="font-size:14px;color:var(--ink2);line-height:1.8;margin-top:14px;margin-bottom:0;">What digital humanities offers is a new kind of reading — one that does not replace the historian's judgment, but supplements it with evidence that close reading alone cannot generate. A single reader cannot hold 260,858 words in mind simultaneously and measure the distribution of guilt across them. A computer can. That is not a replacement for humanistic inquiry. It is an extension of it — and one that, in this case, confirms what historians suspected but could not quantify: <strong>the language of the memoir is the language of a man who knew, and spent twenty years in prison learning how to say he did not.</strong></p>
+      </div>
+
       <p style="font-style:italic;color:var(--ink3);font-size:14px;margin-top:28px;">This is what 2026 technology makes possible: not new archives, but new ways of reading the archives we already have — and finding, in 260,858 words written across 20 years in a prison cell, what one man spent his life trying to hide.</p>
     </section>
 
