@@ -520,9 +520,10 @@ footer{border-top:3px double var(--rule-h);padding:28px 48px;display:flex;justif
     <div class="side-section">
       <div class="side-title">AI & Tools Disclosure</div>
       <div style="font-size:12px;color:var(--ink2);line-height:1.75;padding:8px 0;border:1px solid var(--rule-h);padding:12px;">
-        <p><strong>AI Used:</strong> Claude (Anthropic) — assisted with Python code generation, D3.js network visualization, and HTML/CSS layout.</p>
-        <p style="margin-top:8px;"><strong>Researcher's work:</strong> All cluster keyword definitions, analytical framework, historical interpretations, and conclusions were designed and verified by the researcher against published secondary literature.</p>
-        <p style="margin-top:8px;"><strong>Text analysis tool:</strong> Python (regex-based), replicating the LIWC keyword-counting approach from Newman et al. (2003).</p>
+        <p><strong>AI model used:</strong> Claude (Anthropic, Opus 4 family, accessed via claude.ai, June 2026).</p>
+        <p style="margin-top:8px;"><strong>How I used it:</strong> I used Claude to help write and debug the Python analysis code, build the D3.js network and Chart.js visualizations, and structure the HTML/CSS of this website. I described what I wanted to measure and Claude generated code I then tested and corrected.</p>
+        <p style="margin-top:8px;"><strong>Prompting strategy:</strong> I worked iteratively — starting from my research question, asking for a first version, running it, and then refining through follow-up prompts (e.g. fixing the per-1,000-word normalization, adjusting the Newman β-weight formula, and removing duplicated sections). I treated each output as a draft to verify, not a final answer.</p>
+        <p style="margin-top:8px;"><strong>What I did myself:</strong> The research question, the choice of Speer's memoir, the decision to apply Newman et al. (2003), all historical interpretation, and every conclusion are my own. I cross-checked the analysis against the original papers and the secondary literature listed here.</p>
       </div>
     </div>
     <div class="side-section">
